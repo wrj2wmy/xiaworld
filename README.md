@@ -74,7 +74,49 @@ private void OnSelectGong(EventContext context)
 ````
 
 
+## 幽淬相关的修改
 
+**【原版代码】** 
+```csharp
+
+````
+
+**【修改内容】** 
+```csharp
+public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
+		{
+			if (base.Rate >= 12)
+			{
+				return false;
+			}
+			if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))
+			{
+				ItemThing itemThing;
+				if (base.Count == 1)
+				{
+					itemThing = this;
+				}
+				else
+				{
+					itemThing = this.Split(1, true);
+					base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
+					(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
+				}
+				itemThing.YouPower += v;
+				itemThing.Rate += v;
+				if (itemThing.View != null && itemThing.Rate >= 3)
+				{
+					itemThing.View.ShowItemRay(new Color?(GameDefine.GetRateColor(itemThing.Rate)));
+					itemThing.NeedClick = true;
+				}
+				GameWatch.Instance.PlayUIAudio("Sound/ding");
+				return true;
+			}
+			return false;
+		}
+````
+
+Table CSS test
 
 ID | Item | Remarks
 ---|------|--------
