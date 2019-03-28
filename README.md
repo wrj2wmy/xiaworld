@@ -176,7 +176,7 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 	{
 		return false;
 	}
-	if (World.RandomRate(Mathf.Pow(0.9f + badd, (float)(base.Rate + this.YouPower))))
+	if (World.RandomRate(Mathf.Pow(0.9f + badd, (float)(base.Rate + this.YouPower))))//底数0.9，越淬概率越低
 	{
 		ItemThing itemThing;
 		if (base.Count == 1)
@@ -189,11 +189,11 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
 			(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
 		}
-		itemThing.LingPower++;
-		if (itemThing.IsFaBao)
+		itemThing.LingPower++;//灵淬次数加一
+		if (itemThing.IsFaBao)//判断是否为法宝
 		{
-			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);
+			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);//获取现有最大灵力
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);//最大灵力*1.1，每次增加最大灵力10%
 		}
 		else
 		{
@@ -213,11 +213,11 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 ```csharp
 public bool SoulCrystalLingPowerUp(float badd = 0f)
 {
-	if (base.Accommodate <= 0f && !this.IsFaBao)
+	if (base.Accommodate <= 0f && !this.IsFaBao)//加上条件跳过法宝
 	{
 		return false;
 	}
-	if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))
+	if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))//底数改成1，概率100%
 	{
 		ItemThing itemThing;
 		if (base.Count == 1)
@@ -230,26 +230,26 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
 			(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
 		}
-		itemThing.LingPower++;
-		if (itemThing.IsFaBao)
+		itemThing.LingPower++;//灵淬次数+1
+		if (itemThing.IsFaBao)//判断是否为法宝
 		{
-			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);
-			float property2 = itemThing.Fabao.GetProperty(g_emFaBaoP.AttackPower);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackPower, property2 * 1.1f);
-			float property3 = itemThing.Fabao.GetProperty(g_emFaBaoP.RotSpeed);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.RotSpeed, property3 * 1.1f);
-			float property4 = itemThing.Fabao.GetProperty(g_emFaBaoP.LingRecover);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.LingRecover, property4 * 1.1f);
-			float property5 = itemThing.Fabao.GetProperty(g_emFaBaoP.Scale);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.Scale, property5 * 1.1f);
-			float property6 = itemThing.Fabao.GetProperty(g_emFaBaoP.TailLenght);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.TailLenght, property6 * 1.1f);
-			float property7 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackAddition);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackAddition, property7 * 1.1f);
-			float property8 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackResistance);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackResistance, property8 * 1.1f);
-			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackRate, 0.3f);
+			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);//获取灵力最大值
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);//灵力最大值增加10%
+			float property2 = itemThing.Fabao.GetProperty(g_emFaBaoP.AttackPower);//获取威力
+			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackPower, property2 * 1.1f);//威力增加10%
+			float property3 = itemThing.Fabao.GetProperty(g_emFaBaoP.RotSpeed);//获取转速
+			itemThing.Fabao.SetProperty(g_emFaBaoP.RotSpeed, property3 * 1.1f);//转速增加10%
+			float property4 = itemThing.Fabao.GetProperty(g_emFaBaoP.LingRecover);//获取灵力回复速度
+			itemThing.Fabao.SetProperty(g_emFaBaoP.LingRecover, property4 * 1.1f);//灵力回复增加10%
+			float property5 = itemThing.Fabao.GetProperty(g_emFaBaoP.Scale);//获取体积
+			itemThing.Fabao.SetProperty(g_emFaBaoP.Scale, property5 * 1.1f);//体积增加10%
+			float property6 = itemThing.Fabao.GetProperty(g_emFaBaoP.TailLenght);//获取拖尾长度
+			itemThing.Fabao.SetProperty(g_emFaBaoP.TailLenght, property6 * 1.1f);//拖尾长度增加10%
+			float property7 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackAddition);//获取击退能力
+			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackAddition, property7 * 1.1f);//击退能力增加10%
+			float property8 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackResistance);//获取击退抵抗
+			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackResistance, property8 * 1.1f);//击退抵抗增加10%
+			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackRate, 0.3f);//攻击频率固定0.3/s
 		}
 		else
 		{
@@ -262,6 +262,11 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 }
 
 ```
+
+
+
+
+[![Deploy CFN Template in us-west-2](./images/deploy-to-aws.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=GuardDuty-Hands-On&templateURL=https://s3-us-west-2.amazonaws.com/sa-security-specialist-workshops-us-west-2/guardduty-hands-on/guardduty-cfn-template.yml)
 
 
 
