@@ -164,6 +164,107 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 }
 ````
 
+
+## 灵淬相关的修改
+
+
+**【原版代码】**
+```csharp
+public bool SoulCrystalLingPowerUp(float badd = 0f)
+{
+	if (base.Accommodate <= 0f)
+	{
+		return false;
+	}
+	if (World.RandomRate(Mathf.Pow(0.9f + badd, (float)(base.Rate + this.YouPower))))
+	{
+		ItemThing itemThing;
+		if (base.Count == 1)
+		{
+			itemThing = this;
+		}
+		else
+		{
+			itemThing = this.Split(1, true);
+			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
+			(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
+		}
+		itemThing.LingPower++;
+		if (itemThing.IsFaBao)
+		{
+			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);
+		}
+		else
+		{
+			itemThing.AccommodateAddv += 5f;
+		}
+		GameWatch.Instance.PlayUIAudio("Sound/ding");
+		return true;
+	}
+	return false;
+}
+```
+
+
+
+
+**【修改内容】** 
+```csharp
+public bool SoulCrystalLingPowerUp(float badd = 0f)
+{
+	if (base.Accommodate <= 0f && !this.IsFaBao)
+	{
+		return false;
+	}
+	if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))
+	{
+		ItemThing itemThing;
+		if (base.Count == 1)
+		{
+			itemThing = this;
+		}
+		else
+		{
+			itemThing = this.Split(1, true);
+			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
+			(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
+		}
+		itemThing.LingPower++;
+		if (itemThing.IsFaBao)
+		{
+			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);
+			float property2 = itemThing.Fabao.GetProperty(g_emFaBaoP.AttackPower);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackPower, property2 * 1.1f);
+			float property3 = itemThing.Fabao.GetProperty(g_emFaBaoP.RotSpeed);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.RotSpeed, property3 * 1.1f);
+			float property4 = itemThing.Fabao.GetProperty(g_emFaBaoP.LingRecover);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.LingRecover, property4 * 1.1f);
+			float property5 = itemThing.Fabao.GetProperty(g_emFaBaoP.Scale);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.Scale, property5 * 1.1f);
+			float property6 = itemThing.Fabao.GetProperty(g_emFaBaoP.TailLenght);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.TailLenght, property6 * 1.1f);
+			float property7 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackAddition);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackAddition, property7 * 1.1f);
+			float property8 = itemThing.Fabao.GetProperty(g_emFaBaoP.KnockBackResistance);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.KnockBackResistance, property8 * 1.1f);
+			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackRate, 0.3f);
+		}
+		else
+		{
+			itemThing.AccommodateAddv += 5f;
+		}
+		GameWatch.Instance.PlayUIAudio("Sound/ding");
+		return true;
+	}
+	return false;
+}
+
+```
+
+
+
 Table CSS test
 
 ID | Item | Remarks
