@@ -8,13 +8,24 @@
 **【修改的类】** Wnd_Painter
 
 **【原版代码】** 
-````
-图片
+```csharp
+
 ````
 
 **【修改内容】** 
-````
-图片
+```csharp
+private void QuickP()
+	{
+		if (this.UIInfo.m_n62.grayed)
+		{
+			return;
+		}
+		if (this.CallBack != null)
+		{
+			this.CallBack(this.SelectName, 1f, null, false);
+		}
+		base.Hide();
+	}
 ````
 ### 跳过第一次手动画符
 
@@ -26,8 +37,40 @@
 ````
 
 **【修改内容】** 
-````
-图片
+```csharp
+private void OnSelectGong(EventContext context)
+	{
+		string text = (string)(context.data as GObject).data;
+		if (this.SelectName == text)
+		{
+			return;
+		}
+		this.SelectName = text;
+		if (string.IsNullOrEmpty(text))
+		{
+			MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", null);
+			this.UIInfo.m_n62.grayed = true;
+			this.UIInfo.m_n63.text = null;
+		}
+		else
+		{
+			SpellDef spellDef = PracticeMgr.Instance.GetSpellDef(text);
+			MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", Resources.Load<Texture2D>(spellDef.Template));
+			float num = World.Instance.GetFuValue(text);
+			num = 1f;
+			if (num > 0f)
+			{
+				this.UIInfo.m_n62.grayed = false;
+				this.UIInfo.m_n63.text = string.Format("{0:P0}", num);
+			}
+			else
+			{
+				this.UIInfo.m_n62.grayed = true;
+				this.UIInfo.m_n63.text = null;
+			}
+		}
+		MapRender.Instance.PaintPanel.ResetPaint();
+	}
 ````
 
 
