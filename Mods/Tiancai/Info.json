@@ -1,0 +1,10 @@
+﻿{
+	"Name":"Tiancai",		
+	"DisplayName":"甜菜做的MOD", 
+	"Desc":"甜菜做的MOD",
+	"Enable":true,			
+	"GameVersion":0.9485,		
+	"Version":1,			
+	"Author":"WRJ",			
+	"Sort":"2",				
+}

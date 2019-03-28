@@ -1,0 +1,54 @@
+﻿<Esoteriacs><List>
+	<!--<Esoteriac Name="DanFang_TongYong">
+		<DisplayName>真丹要略</DisplayName>
+		<Desc>记录修行界常见丹药炼制方法的著作。</Desc>
+		<Element>Jin</Element>
+		<Exp>123</Exp>
+		<EffectDesc>各种强大的功能</EffectDesc>
+		<Skills>
+			<li>TSkillSkill</li>
+		</Skills>
+		<Dans>
+			<li>Dan_IncreaseLife4</li>
+			<li>Dan_IncreaseLife4</li>
+			<li>Dan_IncreaseLife4</li>
+			<li>Dan_IncreaseLife4</li>
+			<li>Dan_IncreaseLife4</li>
+			<li>Dan_IncreaseLife4</li>
+		</Dans>
+		<Places>
+			<li>Place_KunLun1</li>
+		</Places>
+		<Secrets>
+			<li>4</li>
+		</Secrets>
+		<Flags></Flags>
+		<Modifier>Dissatisfaction</Modifier>	
+	</Esoteriac> -->
+	<!--学习宝典直接学会技能-->
+	<Esoteriac Name="Custom_Esoteriac_NiuBi">
+		<DisplayName>牛逼宝典</DisplayName>
+		<StarLevel>2</StarLevel>
+		<Difficulty>6</Difficulty>
+		<Desc>上古大能领悟的秘法。学成此法可将凡人肉身转化成天神之体，全面提高身体素质。</Desc>
+		<GLevel>Qi</GLevel>
+		<Element>None</Element>
+		<Type>None</Type>
+		<EffectDesc>大幅提高各种属性</EffectDesc>
+		<Modifier>Other_Esoteriac_Niubi</Modifier>	
+	</Esoteriac>
+	<!--学习玉函学会符图-->
+	<Esoteriac Name="SpellEsoteriac_Niubi">
+		<DisplayName>牛逼玉函</DisplayName>
+		<Desc>道门秘传，记载两种于修行大有益处的符箓。</Desc>
+		<Hide>0</Hide>
+		<Element>None</Element>
+		<Type>None</Type>
+		<Exp>500</Exp>
+		<EffectDesc>解锁 符图：\n牛逼外门符\n牛逼内门符</EffectDesc>
+		<Spells>
+			<li>Spell_Niubi1</li>
+			<li>Spell_Niubi2</li>
+		</Spells>
+	</Esoteriac> 
+</List></Esoteriacs>

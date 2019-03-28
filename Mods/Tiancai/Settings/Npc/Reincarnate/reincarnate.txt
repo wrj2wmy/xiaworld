@@ -1,0 +1,7 @@
+﻿ID	IsHide	LastName	FristName	Desc	Sex	Age	BodyType	Hair	Beard	ClothesStuff	BodyColor	BackStory1	BackStory2	BackStory3	Feature1	Feature2	Feature3	Experience1	Experience2	Experience3	Experience4	Relation1	Relation2	Relation3
+ID	"是否隐藏1 不参与随机但参与创建
+2 不参与随机也不参与创建"	姓	名	轮回者来源	性别(1男2女)	年龄	身体类型(1正常2壮3胖)	头发ID	胡须ID	衣服主材料	肤色(正常0白1黑2黄3)	背景故事1	背景故事2	背景故事3	附加特性1	附加特性2	附加腾特性3	经历1	经历2	经历3	经历4	关系1(ID|NAME)	关系2(ID|NAME)	关系3(ID|NAME)
+80001	1	王	大仙	超级牛逼的挨踢精英	1	25	2	3			0	210001	200150	200042	LunHui_6	SonOfDestiny	LunHui_3	Experiences4	Experiences13	Zuobi_Experiences1		80002|Spouse		
+80002	1	蒜瓣	少女	超级牛逼的大仙的老婆	2	18	1	5	-1	Item_PurpleCloth	0	210001	200150	200042	LunHui_6	SonOfDestiny	LunHui_3	Experiences4	Experiences13	Zuobi_Experiences1		80001|Spouse		
+80003	1	李	逍遥	超级牛逼的剑仙	1	25	2	1	-1		0	210001	200150	200042	LunHui_6	SonOfDestiny	LunHui_3	Experiences4	Experiences13	Zuobi_Experiences1		80004|Spouse		
+80004	1	赵	灵儿	超级牛逼的女娲后人	2	18	1	5			1	210001	200150	200042	LunHui_6	SonOfDestiny	LunHui_3	Experiences4	Experiences13	Zuobi_Experiences1		80003|Spouse		

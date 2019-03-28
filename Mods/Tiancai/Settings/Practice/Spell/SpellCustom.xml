@@ -1,0 +1,77 @@
+<Spells><List>	
+	
+	
+	<Spell Name="Spell_Niubi1">
+		<DisplayName>外门符</DisplayName>
+		<Desc>千年前古仙王大仙改进道门神符留下的绝版符咒。\n[color=#D06508]牛逼就是我[/color]</Desc>
+		<Template>Spell/main_texture_bihan01</Template>
+		<UnLock>0</UnLock>
+		<Effects>
+			<!--提高移动速度-->
+			<li Name="MoveSpeed" AddP="1"/>
+			<!--提高耐寒能力-->
+			<li Name="ComfyTMin" AddV="-100"/>
+			<li Name="ToleranceTMin" AddV="-100"/>
+			<!--提高耐热能力-->
+			<li Name="ComfyTMax" AddV="200"/>
+			<li Name="ToleranceTMax" AddV="200"/>
+			<!--可以提高身体自然恢复力的符咒。-->
+			<li Name="RecoveryPower" AddP="0.3"/>
+			<!--可以提高睡眠质量，并让人不易疲劳。-->
+			<li Name="FatigueConsumeConstant" AddP="-1"/>
+			<li Name="FatigueRecoveryConstant" AddP="1"/>
+			<!--降低身体对食物与水的消耗。-->
+			<li Name="NutritionConsumeConstant" AddP="-0.5"/>
+			<li Name="WaterConsumeConstant" AddP="-0.5"/>
+			<!--让人心情轻微变好，且降低娱乐值的衰减速度。-->
+			<li Name="HappyConsumeConstant" AddP="-1"/>
+			<li Name="BaseEmotionAddV" AddV="200"/>
+			<!--提高战斗能力，提高疼痛忍耐。-->
+			<li Name="NpcFight_BaseHitChance" AddV="1"/>
+			<li Name="NpcFight_BaseDodgeChance" AddV="0.95"/>
+			<li Name="PainTolerance" AddP="0.5"/>
+			<!--使手脚灵敏，工作效率提高。-->
+			<li Name="GlobalEfficiency" AddP="2"/>
+			<!--提高制作物的品质。-->
+			<li Name="MadeQualityAddValue" AddV="1"/>
+			<!--提高打猎，种植收获时的产量。-->
+			<li Name="PlantHarvestYieldEfficiency" AddP="1"/>
+			<li Name="ButcherYieldEfficiency" AddP="1"/>
+			<!--提高治疗的成功率和疗效。-->
+			<li Name="TreatmentExpectQuality" AddP="1"/>
+			<li Name="TreatSuccessChance" AddP="1"/>
+		</Effects>
+	</Spell>
+
+	<Spell Name="Spell_Niubi2">
+		<DisplayName>内门符</DisplayName>
+		<Desc>千年前古仙王大仙改进道门神符留下的绝版符咒。\n[color=#D06508]我就是牛逼[/color]</Desc>
+		<Template>Spell/main_texture_bishu01</Template>
+		<UnLock>0</UnLock>
+		<Effects>
+			<!--提高历练时的速度-->
+			<li Name="WorldMapFlySpeedAddP" AddV="10"/>
+			<!--使头脑清明，提高学习能力。-->
+			<li Name="IntelligenceSkillEXPConstant" AddP="10"/>
+			<!--可以使心境提高的符咒。-->
+			<li Name="MindStateBaseValue" AddV="100"/>
+			<!--可以提高突破瓶颈的概率。-->
+			<li Name="PracticeRateAddPFromDan" AddP="1"/>
+			<!--可以提高修炼速度。-->
+			<li Name="DeepPracticeSpeedSpecialCoefficient" AddP="1"/>
+			<!--可以提高炼制法宝成功率-->
+			<li Name="FabaoMake_SuccessRateAddV" AddV="10"/>
+			<!--可以提高炼制法宝的灵力。-->
+			<li Name="FabaoMake_LingInheritRateAddV" AddV="100"/>
+			<!--可以提高炼制法宝的品阶。-->
+			<li Name="FabaoMake_QualityAddV" AddV="1"/>
+			<!--可以提高炼制神器的概率。-->
+			<li Name="FabaoMake_TwelveRateChance" AddV="1"/>
+			<!--可以提高炼制丹药的成功率。-->
+			<li Name="DanMake_SuccessRateAddV" AddV="1"/>
+			<!--可以提高炼制丹药的产量。-->
+			<li Name="DanMake_YieldAddP" AddV="10"/>
+		</Effects>
+	</Spell>
+
+</List>	</Spells>

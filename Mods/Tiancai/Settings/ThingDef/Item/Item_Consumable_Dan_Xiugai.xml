@@ -1,0 +1,63 @@
+<ThingDefs><List>
+	<ThingDef Type="Item" Name="Item_Dan_IncreaseLife_Gai" Parent="DanBase">
+		<MaxStack>500</MaxStack>
+		<ThingName>大圣丹</ThingName>
+		<TexPath>res\Sprs\object\object_HULUdanyao04</TexPath>
+		<Desc>可以延寿三甲子，并降低天谴十及道行五十的丹药，可一直服用。</Desc>	
+		<Rate>9</Rate>	
+		<Beauty>15</Beauty>
+		<ElementKind>None</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth2</li>
+				<li>Hard1</li>
+				<li>GreatThing_Ling</li>
+			</PhysicalLables>
+			<Elixir>
+				<Modifier>Dan_IncreaseLife_Gai</Modifier>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>None</Kind>
+			<Value>0</Value> 
+		</Element>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_Dan_GiantLing" Parent="DanBase">
+		<MaxStack>500</MaxStack>
+		<ThingName>巨灵丹</ThingName>
+		<TexPath>res\Sprs\object\object_HULUdanyao04</TexPath>
+		<Desc>可以补充五百万灵气的神奇丹药，可一直服用。</Desc>	
+		<Rate>9</Rate>	
+		<Beauty>15</Beauty>
+		<ElementKind>None</ElementKind>
+		<Item Lable="Dan">
+			<PhysicalLables>
+				<li>Smooth2</li>
+				<li>Hard1</li>
+				<li>GreatThing_Ling</li>
+			</PhysicalLables>
+			<Elixir>
+				<DiscipleOnly>1</DiscipleOnly><!--仅内门可以服用-->
+				<Modifier>Dan_Giant_Ling</Modifier>
+				<Ling>5000000</Ling>
+			</Elixir>
+			<BeMade>
+				<WorkToMake>400</WorkToMake>
+				<CostItems>
+					<Item name = "Item_LingStone" count = "1"/>
+				</CostItems>
+			</BeMade> 
+		</Item>
+		<Element>
+			<Kind>None</Kind>
+			<Value>0</Value> 
+		</Element>
+	</ThingDef>
+</List></ThingDefs>

@@ -1,0 +1,86 @@
+﻿<Experiences><List>
+	<!--
+	<Experience Name="E_Item1">
+		<DisplayName>富家子弟</DisplayName>
+		<Desc>你在入门前就是富家子弟</Desc>
+		<Point>1</Point>
+		<NpcSlot>1</NpcSlot>
+		<ModifierDef>
+			<Properties>
+				<li Name="MaxAge" AddV="30"/>
+			</Properties>
+			<Skills>
+				<li Name="Qi" Level="20"/>
+			</Skills>
+		</ModifierDef>
+		<Equips>
+			<li Name= "Item_SysAxe" Stuff="Item_RoughWoodBlock"/>
+		</Equips>
+		<Items>
+			<li Name= "Item_Cake" Count="100"/>
+		</Items>		
+		<Esoterics>
+			<li>Gong1_Esoteriac_2</li>
+		</Esoterics>
+	</Experience>
+	-->
+
+	<Experience Name="Zuobi_Experiences1">
+	    <DisplayName>作弊大典</DisplayName>
+	    <Desc>此人一生寻仙仿道，终于在昆仑山找到一本古代仙人的秘籍《作弊大典》。\n\n\n[size=10]初始增加：[color=#D06508]各种福利[/color]。[/size]</Desc>
+	    <Point>0</Point>
+	    <Hide>0</Hide>
+	    <Gongs>
+	      <li>Gong_2_Mu</li>
+	      <li>Gong_3_Jin</li>
+	      <li>Gong_4_None</li>
+	      <li>Gong_5_Tu</li>
+	      <li>Gong_6_Huo</li>
+	      <li>Gong_7_Huo</li>
+	    </Gongs>
+	    <Items>
+	      <li Name= "Item_Dan_LunHui1" Count="1"/>
+	      <li Name= "Item_RoughWoodBlock" Count="200"/>
+	      <li Name= "Item_IronBlock" Count="200"/>
+	      <li Name= "Item_MarbleBlock" Count="200"/>
+	      <li Name= "Item_SilverBlock" Count="40"/>
+	      <li Name= "Item_CopperBlock" Count="40"/>
+	      <li Name= "Item_Cake" Count="200"/>
+	      <li Name= "Item_Jerky" Count="200"/>
+	      <li Name= "Item_Dan_NoHunger" Count="200"/>
+	      <li Name= "Item_Healroot" Count="100"/>
+	      <li Name= "Item_Mint" Count="100"/>
+	      <li Name= "Item_MagicHerb" Count="100"/>
+	      <li Name= "Item_RedGinseng" Count="100"/>
+	      <li Name= "Item_PurpleGanodermaLucidum" Count="100"/>
+	      <li Name= "Item_LunHui_MaterialBox" Count="1"/>
+	      <li Name= "Item_LunHui_MagicBox" Count="1"/>
+	      <li Name= "Item_LunHui_RockBox" Count="2"/>
+	      <li Name= "Item_LunHui_MetalBox" Count="2"/>
+	      <li Name= "Item_LunHui_SoulBox" Count="2"/>
+	      <li Name= "Item_LunHui_DanBox" Count="2"/>
+	      <li Name= "Item_LunHui_BookBox" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox1" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox2" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox3" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox4" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox5" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox6" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox7" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox8" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox9" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox10" Count="1"/>
+	      <li Name= "Item_LunHui_GongBox11" Count="1"/>
+	    </Items>
+	      
+	    <Esoterics>
+	      <li>Esoteriac_LunHui4</li>
+	      <li>Other_Esoteriac_JiuHua</li>
+	      <li>Other_Esoteriac_ChiLianYuan</li>
+	      <li>Other_Esoteriac_LongHu1</li>
+	      <li>Other_Esoteriac_LongHu2</li>
+	      <li>Other_Esoteriac_DengXian1</li>
+	      <li>SpellEsoteriac_4</li>
+	    </Esoterics>
+  	</Experience>
+</List></Experiences>

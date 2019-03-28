@@ -1,0 +1,419 @@
+<ThingDefs><List>
+	<!--system下的item名称不能随意更改-->
+	<ThingDef Type="Item" Name="Item_LunHui_MaterialBox" Parent="MaterialBase">
+		<ThingName>神秘材料匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘材料。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘材料匣。" Story="Story_Item_LunHui_MaterialBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+
+
+	<ThingDef Type="Item" Name="Item_LunHui_DanBox" Parent="MaterialBase">
+		<ThingName>神秘丹药匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘丹药。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘丹药匣。" Story="Story_Item_LunHui_DanBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_RockBox" Parent="MaterialBase">
+		<ThingName>神秘灵石匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘灵石。(千棱神玉，天柱石，灵晶，灵石，星髓，玄铁矿，梧桐木，灵木，鹿属皮，斐皮)</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘灵石匣。" Story="Story_Item_LunHui_RockBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_MetalBox" Parent="MaterialBase">
+		<ThingName>神秘灵宝匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘灵宝。(金、木、水、火、土灵宝，降温珠子，妖兽血，天劫之息，龙鳞)</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘灵宝匣。" Story="Story_Item_LunHui_MetalBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_SoulBox" Parent="MaterialBase">
+		<ThingName>神秘灵材匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘灵材。(幽魄，宁魄，灵魄，灵晶砖，天柱石砖，星髓锭，灵木料，梧桐木料，金丝木料)</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘灵材匣。" Story="Story_Item_LunHui_SoulBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_BookBox" Parent="MaterialBase">
+		<ThingName>神秘宝典匣</ThingName>
+		<MaxStack>10</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有大量神秘宝典。(牛逼宝典，牛逼玉函)</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="打开神秘宝典匣。" Story="Story_Item_LunHui_BookBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox1" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有太和十六洞天所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox1" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox2" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有己寅九冲多宝真解所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox2" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox3" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有七杀剑诀所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox3" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox4" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有玉清仙法所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox4" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox5" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有偷天诀所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox5" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox6" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有九转金丹直指所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox6" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox7" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有太上忘情道所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox7" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox8" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有北斗洞心劫法所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox8" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox9" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有长生六道轮回经所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox9" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox10" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有三阳三昧丙丁炼火诀所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox10" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_GongBox11" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有葵花炼神大法所有功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_GongBox11" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_LunHui_MagicBox" Parent="MaterialBase">
+		<ThingName>神秘神功匣</ThingName>
+		<MaxStack>1</MaxStack>
+		<TexPath>res\Sprs\object\object_shixiazi01</TexPath>
+		<Desc>来自异世界的神秘宝箱，里面存有实用神通功法秘籍。</Desc>	
+		<Beauty>15</Beauty>	
+		<Rate>12</Rate>
+		<ElementKind>None</ElementKind>
+		<Tags>
+			<Tag Name="_StoneBox" Level="10"/>
+		</Tags>
+		<Flammability>
+			<Flammability>0</Flammability>
+		</Flammability>
+		<Item Lable="Other">	
+			<NotRandom>1</NotRandom>
+			<FabaoSuffix>匣</FabaoSuffix>				
+		</Item>
+		<StoryBnts>
+			<li Name="打开" Desc="神秘神功匣" Story="Story_Item_LunHui_MagicBox" Cost="5" Icon="res/Sprs/ui/icon_hand"/>
+		</StoryBnts>
+	</ThingDef>
+
+</List></ThingDefs>

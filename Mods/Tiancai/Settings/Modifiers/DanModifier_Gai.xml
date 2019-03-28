@@ -1,0 +1,28 @@
+<ModifierDefs><List>
+	<Modifier Name="Dan_IncreaseLife_Gai" Type="Normal">
+		<DisplayName>大圣丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="MaxAge" AddV="180"/>
+			<li Name="GodPenaltyAddV" AddV="-10"/>
+			<li Name="AbilityLvAddV" AddV="-50"/>
+			<li Name="NpcLingMaxValue" BAddP="1"/>
+			<li Name="NpcLingMaxValue" BAddV="1000"/>
+		</Properties>
+	</Modifier> 
+
+	<Modifier Name="Dan_Giant_Ling" Type="Normal">
+		<DisplayName>巨灵丹</DisplayName>
+		<Desc>利用巨灵丹修炼，与灵气深度共鸣，能提高灵气恢复速度，并从根本上提高修炼速度。</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>9000</Duration>
+		<Display>1</Display>
+		<Properties>
+			<li Name="DeepPracticeSpeedSpecialCoefficient" BAddV="5"/>
+			<li Name="LingAbsorbSpeed" AddP="100"/>
+		</Properties>
+	</Modifier> 
+</List></ModifierDefs>

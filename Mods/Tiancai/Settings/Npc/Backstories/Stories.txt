@@ -1,0 +1,3 @@
+﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	F1	F2	F3	F4	F5	F6
+ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	特性1	特性2	特性3	特性4	特性5	特性6
+210001	Human	0	0	天命所归	[NAME]钟天地气运所生，天赋异禀，盖世无双。无所不能，无所不会。他的出生，简直可以说是老天犯了错误。	-1	10	10	10	10	10	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20,2	20	20	20	FinalFantasy					

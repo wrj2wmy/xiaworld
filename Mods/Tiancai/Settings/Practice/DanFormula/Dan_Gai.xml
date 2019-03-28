@@ -1,0 +1,19 @@
+<!--丹炉丹方：需求等级、成功率、产量数量-->
+<DanFormulas><List>
+	<!--大圣丹-->
+	<Dan Name="Dan_IncreaseLife_Gai">
+		<Normal>1</Normal>
+		<ItemName>Item_Dan_IncreaseLife_Gai</ItemName>
+		<Level>20</Level>
+		<SuccessRate>-0.2</SuccessRate>
+		<Count>1</Count>
+	</Dan>
+	<!--巨灵丹-->
+	<Dan Name="Dan_GiantLing">
+		<Normal>1</Normal>
+		<ItemName>Item_Dan_GiantLing</ItemName>
+		<Level>20</Level>
+		<SuccessRate>-0.2</SuccessRate>
+		<Count>1</Count>
+	</Dan>
+</List></DanFormulas>

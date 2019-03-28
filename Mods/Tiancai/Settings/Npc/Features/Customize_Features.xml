@@ -1,0 +1,121 @@
+﻿<FeatureDefs><List>
+	<!--
+	<Feature Name="N1" Type="Normal">
+		<DisplayName>样例</DisplayName>
+		<Desc>样例</Desc>
+		<HideInUI>1</HideInUI>
+		<Mutex>互斥特性
+				<li>CrippleLeft</li>
+				<li>CrippleRight</li>
+		</Mutex>
+		<BanRelations>
+				<li>Parent</li>
+		</BanRelations>
+		<Opposition> 对立特性
+			<li>StinkAllOver</li>
+			<li>Slovenly</li>
+		</Opposition>
+		<Close>亲近特性
+			<li>Cleanliness</li>
+		</Close>
+		<MoodBranch> 心情分支
+			<li Old="BedroomExpect8" New="BedroomExpect6"/>
+		</MoodBranch>
+		<ModifierDef>
+			<BaseFive>0,0,0,0,0</BaseFive>
+			<Properties>
+				<li Name="MoveSpeed" AddV="5" AddP="0.5"/>
+				<li Name="VisionRadius" AddP="-0.5"/>
+			</Properties>
+			<Skills>
+				<li Name="Building" Level="1"/>
+				<li Name="Mining" Level="2"/>
+			</Skills>
+			<BanBodyParts>
+				<li>LeftEye</li>
+			</BanBodyParts>
+			<BanJobs>
+				<li>Clean</li>
+				<li>Build</li>
+			</BanJobs>
+			<Damages>
+				<li Part="LeftThighbone" Damage="Scar" Value="0.5"/>
+			</Damages>
+			<Moods>
+				<li>Optimistic</li>
+			</Moods>
+			<GiveFavours>
+				<li>Scar</li>
+			</GiveFavours>
+			<GetFavours>
+				<li>Scar</li>
+			</GetFavours>
+		</ModifierDef>
+	</Feature> 
+	-->
+	<Feature Name="FinalFantasy" Type="Normal">
+		<DisplayName>最终幻想</DisplayName>
+		<Desc>此人属性逆天，是所有修仙者的最终幻想。</Desc>
+		<ModifierDef>
+			<GiveFavours>
+				<li>Loyal</li>
+				<li>DongShiZhang</li>
+				<li>HaoShuang</li>
+				<li>BeReceived</li>
+			</GiveFavours>
+			<Skills>
+				<li Name="Qi" Level="5"/>
+				<li Name="Art" Level="5"/>
+				<li Name="SocialContact" Level="5"/>
+				<li Name="Medicine" Level="5"/>
+				<li Name="Cooking" Level="5"/>
+				<li Name="Building" Level="5"/>
+				<li Name="Farming" Level="5"/>
+				<li Name="Mining" Level="5"/>
+				<li Name="Cooking" Level="5"/>
+				<li Name="Manual" Level="5"/>
+				<li Name="Fabao" Level="5"/>
+	          	<li Name="FightSkill" Level="5"/>
+	          	<li Name="Barrier" Level="5"/>
+	          	<li Name="DanQi" Level="5"/>
+			</Skills>
+			<Properties>
+				<li Name="MoveSpeed" AddP="0.5"/>
+				<li Name="WorldMapFlySpeedAddP" AddV="10"/>
+				<li Name="VisionRadius" AddP="1"/>
+				<li Name="CleanSpeed" AddP="1"/>
+				<li Name="MaxAge" AddV="40"/>
+				<li Name="ToleranceTMin" AddV="-25"/>
+				<li Name="ToleranceTMax" AddV="25"/>
+				<li Name="SpeedOfMindStateCoefficient" AddP="-0.6"/>
+				<li Name="NpcFight_BaseHitChance" AddV="0.5"/>
+				<li Name="NpcFight_BaseDodgeChance" AddV="0.5"/>
+				<li Name="PracticeRateAddPFromDan" AddP="0.2"/>
+				<li Name="InspirationCoefficient" AddP="1"/>
+				<li Name="GlobalEfficiency" AddP="0.3"/>
+				<li Name="IntelligenceSkillEXPConstant" AddP="10"/>
+				<li Name="FatigueConsumeConstant" AddV="-0.9"/>
+				<li Name="DeepPracticeSpeedSpecialCoefficient" AddP="0.5"/>
+				<li Name="GodPenaltyAddV" AddV="-20"/>
+				<li Name="NpcLingMaxValue" BAddV="1000"/>
+				<li Name="NpcLingMaxValue" BAddP="1"/>
+				<li Name="MindStateBaseValue" AddV="15"/>
+				<li Name="BasepracticeSpeedCoefficient" AddP="0.5"/>
+				<li Name="TreatmentExpectQuality" AddP="0.3"/>
+				<li Name="TreatSuccessChance" AddP="0.3"/>
+				<li Name="CookingSuccessChance" AddP="0.3"/>
+				<li Name="ConstructSuccessChance" AddP="0.3"/>
+				<li Name="MadeQualityAddValue" AddP="0.3"/>
+				<li Name="ManufactureExpectQuality" AddP="0.3"/>
+				<li Name="DisasterFightingSuccessChance" AddP="0.3"/>
+				<li Name="SpeedOfMindStateCoefficient" AddP="0.4"/>
+				<li Name="EmotionAmplificationFactor" AddP="0.2"/>
+				<li Name="LingAbsorbSpeed" AddP="2"/>
+				<li Name="SocialContactBaseSuccess" AddP="0.5"/>
+				<li Name="NpcFight_SpellPowerAddP" BAddP="1"/>
+	          	<li Name="NpcFight_ShieldConversionRate" BAddP="0.5"/>
+	          	<li Name="NpcFight_FabaoPowerAddP" BAddV="1"/>
+			</Properties>
+		</ModifierDef>
+	</Feature>
+</List></FeatureDefs>

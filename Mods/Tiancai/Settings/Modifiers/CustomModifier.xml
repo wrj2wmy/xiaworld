@@ -1,0 +1,53 @@
+<ModifierDefs><List>
+	
+	<Modifier Name="Other_Esoteriac_Niubi" Type="Normal"><!--牛逼宝典-->
+		<DisplayName>牛逼宝典</DisplayName>
+		<Desc>学会了牛逼宝典，你真牛逼</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration><!-- -1 为永久被动-->
+		<Display>1</Display><!-- -1 为显示在状态栏-->
+		<Properties>
+			<!--个人属性相关-->
+			<li Name="NpcLingMaxValue" AddP="1"/>  <!--初始灵气补正-->
+			<li Name="MaxAge" AddV="400"/><!--最大寿命加400-->
+			<li Name="MindStateBaseValue" AddV="100"/><!--基础心境加100-->
+			<li Name="BaseEmotionAddV" AddV="200"/><!--基础情绪加200-->
+			<li Name="PracticeFoodConsumeConstant" AddV="-10"/><!--精元消耗速度减10-->
+			<li Name="DeepPracticeSpeedSpecialCoefficient" AddV="1"/><!--修炼速度加100-->
+			<li Name="ComfyTMin" AddV="-100"/><!--舒适最低温度减100-->
+			<li Name="ToleranceTMin" AddV="-100"/><!--极限最低温度减100-->
+			<li Name="ComfyTMax" AddV="200"/><!--舒适最高温度加200-->
+			<li Name="ToleranceTMax" AddV="200"/><!--舒适最低温度加200-->
+			<li Name="NpcFight_BaseHitChance" AddV="9.4"/><!--基础命中-->
+			<li Name="NpcFight_BaseDodgeChance" AddV="9.2"/><!--基础闪避-->
+			<li Name="PainTolerance" AddP="9.5"/><!--疼痛忍耐-->
+			<!--法宝属性相关-->
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="0.5"/><!--法宝威力加50%-->
+			<li Name="NpcFight_FabaoLingRecoverAddP" BAddP="0.5"/><!--法宝灵力回复加50%-->
+			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="0.5"/><!--法宝最大灵力加50%-->
+			<li Name="NpcFight_FabaoFlySpeedAddP" BAddP="0.5"/><!--法宝飞行速度加50%-->
+			<li Name="NpcFight_FabaoTurnSpeedAddP" BAddP="0.5"/><!--法宝转弯速度加50%-->
+			<li Name="NpcFight_FabaoTrailingLengthAddP" BAddP="0.5"/><!--法宝拖尾长度加50%-->
+			<li Name="NpcFight_FabaoRepelResistanceAddV" AddV="1"/><!--法宝击退抵抗加1-->
+			<li Name="NpcFight_FabaoRepelDistanceAddV" AddV="1"/><!--法宝击退距离加1-->
+			<!--基础消耗相关-->
+			<li Name="NutritionConsumeConstant" AddP="-1"/><!--不会饥饿-->
+			<li Name="WaterConsumeConstant" AddP="-1"/><!--不会口渴-->
+			<li Name="SpeedOfMindStateCoefficient" AddP="-1"/><!--心境不会波动-->
+			<!--NPC战斗相关-->
+			<li Name="NpcFight_SpellPowerAddP" BAddP="0.5"/><!--术法威力增强50%-->
+			<li Name="NpcFight_ShieldConversionRate" BAddP="0.5"/><!--护盾转化率增加50%-->
+			<!--炼宝相关-->
+			<li Name="FabaoMake_SuccessRateAddV" AddV="10"/><!--炼宝十成成功率-->
+            <li Name="FabaoMake_SpeedAddV" AddV="10"/><!--炼宝速度加成-->
+            <li Name="FabaoMake_LingInheritRateAddV" AddV="100"/><!--炼宝品阶加成-->
+            <li Name="FabaoMake_QualityAddV" AddV="10"/><!--炼宝品质加值-->
+            <li Name="FabaoMake_TwelveRateChance" AddV="10"/><!--炼宝速度加成-->
+            <!--炼丹相关-->
+            <li Name="DanMake_SuccessRateAddV" AddV="10"/><!--炼丹十成成功率-->
+			<li Name="DanMake_SpeedAddV" AddV="1"/><!--炼丹速度加成-->
+			<li Name="DanMake_YieldAddP" AddV="10"/><!--炼丹速度加成-->
+		</Properties>
+	</Modifier>
+	
+</List></ModifierDefs>

@@ -1,0 +1,1107 @@
+﻿<ThingDefs><List>
+
+<!--葫芦材料-->
+
+        <ThingDef Type="Item" Name="Item_Other_Hulu997">
+        <ThingName>先天混元葫芦</ThingName>
+        <TexPath>Spr\Object\object_motian1000 (48).png</TexPath>
+        <Desc>天地初开，混沌育生，洪荒灵物，五行混元。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Chaos</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>仙葫,剑葫,葫芦</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_Other_Hulu998">
+	<ThingName>先天冥水葫芦</ThingName>
+        <TexPath>Spr\Object\object_qita1000 (67).png</TexPath>
+        <Desc>天地初开，混沌育生，洪荒灵物，五行属水。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>仙葫,剑葫,葫芦</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_Other_Hulu999">
+	<ThingName>先天离火葫芦</ThingName>
+        <TexPath>Spr\Object\object_qita1000 (74).png</TexPath>
+        <Desc>天地初开，混沌育生，洪荒灵物，五行属火。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>仙葫,剑葫,葫芦</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+                        <li>GreatThing_Fly</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--元宝琴棋书画材料-->
+
+	<ThingDef Type="Item" Name="Item_Other_Yuanbao999">
+	<ThingName>金精元宝</ThingName>
+		<TexPath>Spr\Object\object_qita1000 (95).png</TexPath>	
+		<Desc>玄天之宝</Desc>
+        <Beauty>10</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Jin</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>元宝,镇</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<ThingDef Type="Item" Name="Item_FunPainting999" Parent="MaterialBase">	
+		<ThingName>六欲图</ThingName>
+		<TexPath>Spr\Object\object_qqsh1000 (41).png</TexPath>	
+		<Desc>相随心生，魔由念至，随机幻变，不可捉摸。</Desc>
+		<MaxStack>1</MaxStack>
+		<Beauty>10</Beauty>
+		<Rate>12</Rate>
+		<ElementKind>Huo</ElementKind>
+		<Item Lable="Other">
+			<FabaoSuffix>卷,图,录</FabaoSuffix>
+			<PhysicalLables>
+                      <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+			</PhysicalLables>		
+		</Item>
+		<Ling>
+			<AddionLing>0</AddionLing>
+			<AddionRadius>1</AddionRadius>
+			<AddionFailing>0</AddionFailing>
+			<AddionFailRadius>0</AddionFailRadius>
+			
+			<Attenuation>0.05</Attenuation>
+			<Absorption>0.6</Absorption>
+			<Accommodate>40</Accommodate>
+		</Ling>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_FunPoem999" Parent="MaterialBase">	
+		<ThingName>未央砚</ThingName>
+		<TexPath>Spr\Object\object_qqsh1000 (34).png</TexPath>	
+		<Desc>玄天之宝</Desc>
+		<MaxStack>1</MaxStack>
+		<Beauty>10</Beauty>
+		<Rate>12</Rate>
+		<ElementKind>Tu</ElementKind>
+		
+		<Flammability>
+			<Flammability>0.6</Flammability>
+			<FlameSpawnThingDef></FlameSpawnThingDef>
+			<FlameSpawnChance>0</FlameSpawnChance>
+			<BurningPoint>120</BurningPoint>
+		</Flammability>
+		
+		<Item Lable="Other">	
+			<FabaoSuffix>砚,镇</FabaoSuffix>
+			<PhysicalLables>
+                      <li>Smooth2</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+			</PhysicalLables>			
+		</Item>
+		<Ling>
+			<AddionLing>0</AddionLing>
+			<AddionRadius>1</AddionRadius>
+			<AddionFailing>0</AddionFailing>
+			<AddionFailRadius>0</AddionFailRadius>
+			
+			<Attenuation>0.05</Attenuation>
+			<Absorption>0.6</Absorption>
+			<Accommodate>40</Accommodate>
+		</Ling>
+	</ThingDef>
+
+	<ThingDef Type="Item" Name="Item_FunMusic999" Parent="MaterialBase">	
+		<ThingName>墨玉琵琶</ThingName>
+		<TexPath>Spr\Object\object_qqsh1000 (48).png</TexPath>	
+		<Desc>玄天之宝</Desc>
+		<MaxStack>1</MaxStack>
+		<Beauty>10</Beauty>
+		<Rate>12</Rate>
+		<ElementKind>Shui</ElementKind>
+		<Flammability>
+			<Flammability>0.6</Flammability>
+			<FlameSpawnThingDef></FlameSpawnThingDef>
+			<FlameSpawnChance>0</FlameSpawnChance>
+			<BurningPoint>120</BurningPoint>
+		</Flammability>
+		<Item Lable="Other">	
+			<FabaoSuffix>琵琶</FabaoSuffix>
+			<PhysicalLables>
+                      <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+			</PhysicalLables>			
+		</Item>
+		<Ling>
+			<AddionLing>0</AddionLing>
+			<AddionRadius>1</AddionRadius>
+			<AddionFailing>0</AddionFailing>
+			<AddionFailRadius>0</AddionFailRadius>
+			
+			<Attenuation>0.05</Attenuation>
+			<Absorption>0.6</Absorption>
+			<Accommodate>40</Accommodate>
+		</Ling>
+	</ThingDef>
+	
+	<ThingDef Type="Item" Name="Item_FunChess999" Parent="MaterialBase">	
+		<ThingName>珍珑棋</ThingName>
+		<TexPath>Spr\Object\object_qqsh1000 (31).png</TexPath>	
+		<Desc>玄天之宝</Desc>
+		<MaxStack>1</MaxStack>
+		<Beauty>10</Beauty>
+		<Rate>12</Rate>
+		<ElementKind>Mu</ElementKind>
+		<Flammability>
+			<Flammability>0.6</Flammability>
+			<FlameSpawnThingDef></FlameSpawnThingDef>
+			<FlameSpawnChance>0</FlameSpawnChance>
+			<BurningPoint>120</BurningPoint>
+		</Flammability>
+		<Item Lable="Other">	
+			<FabaoSuffix>棋</FabaoSuffix>
+			<PhysicalLables>
+                      <li>Smooth2</li>   
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+			</PhysicalLables>			
+		</Item>
+		<Ling>
+			<AddionLing>0</AddionLing>
+			<AddionRadius>1</AddionRadius>
+			<AddionFailing>0</AddionFailing>
+			<AddionFailRadius>0</AddionFailRadius>
+			
+			<Attenuation>0.05</Attenuation>
+			<Absorption>0.6</Absorption>
+			<Accommodate>40</Accommodate>
+		</Ling>
+	</ThingDef>
+
+
+
+
+<!--针伞扇铃绫-->
+<!--金属性针材料-->
+<ThingDef Type="Item" Name="Item_Other_Zhen999">
+<ThingName>庚辛针（材料）</ThingName>	
+	<TexPath>Spr\Object\object_wuqi1000 (3).png</TexPath>
+	<Desc>先天庚辛金精结成，共五支，锋锐无披。</Desc>
+        <MaxStack>1</MaxStack>
+        <Beauty>10</Beauty>
+        <Rate>12</Rate>
+	<ElementKind>Jin</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>针,刺</FabaoSuffix>
+	<PhysicalLables>
+                      <li>Sharp</li>
+			<li>Smooth2</li>
+			<li>SmallThing</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Attack</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--木属性绫罗材料-->
+<ThingDef Type="Item" Name="Item_Other_Lingluo999">
+<ThingName>玄天绫（材料）</ThingName>	
+	<TexPath>Spr\Object\object_shipin1000 (3).png</TexPath>
+	<Desc>先天至宝</Desc>
+        <MaxStack>1</MaxStack>
+        <Beauty>10</Beauty>
+        <Rate>12</Rate>
+	<ElementKind>Mu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>绫</FabaoSuffix>
+	<PhysicalLables>     
+	<li>Smooth2</li>
+                      <li>Light1</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+<!--水属性铃铛材料-->
+<ThingDef Type="Item" Name="Item_Other_Lingdang999">
+<ThingName>幻心铃（材料）</ThingName>	
+	<TexPath>Spr\Object\object_shipin1000 (7).png</TexPath>
+	<Desc>先天至宝</Desc>
+        <MaxStack>1</MaxStack>
+        <Beauty>10</Beauty>
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>铃</FabaoSuffix>
+	<PhysicalLables>     
+	<li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--火属性扇子材料-->
+<ThingDef Type="Item" Name="Item_Other_Shanzi999">
+<ThingName>离火扇（材料）</ThingName>	
+	<TexPath>Spr\Object\object_shanzi1000 (2).png</TexPath>
+	<Desc>先天至宝</Desc>
+        <MaxStack>1</MaxStack>
+        <Beauty>10</Beauty>
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>扇</FabaoSuffix>
+	<PhysicalLables>
+                      <li>Sharp</li>
+                      <li>Light1</li>
+			<li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--土属性伞材料-->
+	<ThingDef Type="Item" Name="Item_Other_Umbrella999">
+	<ThingName>戊己伞（材料）</ThingName>	
+		<MaxStack>1</MaxStack>
+		<TexPath>Spr\Object\object_shan1000 (2).png</TexPath>
+		<Desc>先天戊己土精化成，状若伞盖，体现幽光。</Desc> 
+		<Beauty>10</Beauty>		
+		<Rate>12</Rate>
+                <ElementKind>Tu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>伞,宝盖,金幢</FabaoSuffix>
+		<PhysicalLables>
+
+                                <li>Smooth2</li>
+                                <li>GreatThing_Knock</li>
+                                <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+
+<!--钟树碑塔印鼎-->
+
+<!--金属性钟材料（偷天）-->
+	<ThingDef Type="Item" Name="Item_Other_Zhong999">
+	<ThingName>太虚钟（材料）</ThingName>
+        <TexPath>Spr\Object\object_qita1000 (76).png</TexPath>
+        <Desc>洪荒奇物，五行属金。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Jin</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>钟</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Knock</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--水属性剑材料（七杀）-->
+	<ThingDef Type="Item" Name="Item_Other_Jian999">
+	<ThingName>镇狱剑（材料）</ThingName>
+        <TexPath>Spr\Object\object_wuqi1000 (19).png</TexPath>
+        <Desc>洪荒奇物，五行属水。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>剑</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--土属性印材料（九转）-->
+<ThingDef Type="Item" Name="Item_Other_Yin999">
+	<ThingName>坤泽印（材料）</ThingName>
+        <TexPath>Spr\Object\object_tdyj1000 (27).png</TexPath>
+        <Desc>洪荒奇物，五行属土。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Tu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>印,镇</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+                        <li>GreatThing_Fly</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--无属性塔材料（玉清）-->
+	<ThingDef Type="Item" Name="Item_Other_Ta999">
+	<ThingName>鸿蒙塔（材料）</ThingName>
+        <TexPath>Spr\Object\object_tdyj1000 (29).png</TexPath>
+        <Desc>洪荒奇物。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>None</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>塔</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--火属性镜材料（多宝）-->
+	<ThingDef Type="Item" Name="Item_Other_Jin999">
+	<ThingName>燚焱镜（材料）</ThingName>
+        <TexPath>Spr\Object\object_tdyj1000 (30).png</TexPath>
+        <Desc>洪荒奇物，五行属火。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>镜</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--土属性鼎材料（太上）-->
+<ThingDef Type="Item" Name="Item_Other_Ding999">
+	<ThingName>乾元鼎（材料）</ThingName>
+        <TexPath>Spr\Object\object_tdyj1000 (21).png</TexPath>
+        <Desc>洪荒奇物，五行属土。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Tu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>鼎</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+                        <li>GreatThing_Fly</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--混元属性如意材料-->
+	<ThingDef Type="Item" Name="Item_Other_Ruyi999">
+	<ThingName>先天混元如意（材料）</ThingName>
+        <TexPath>Spr\Object\object_qita1000.png</TexPath>
+        <Desc>洪荒奇物，五行混元。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Chaos</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>如意</FabaoSuffix>
+                        <PhysicalLables>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+<!--无属性剑材料-->
+	<ThingDef Type="Item" Name="Item_Other_Jian998">
+	<ThingName>九月子母剑（材料）</ThingName>
+        <TexPath>Spr\Object\object_motian1000 (68).png</TexPath>
+        <Desc>上古至宝</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>None</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>剑</FabaoSuffix>
+		<PhysicalLables>
+                         <li>Sharp</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--金属性斧头材料-->
+	<ThingDef Type="Item" Name="Item_Other_Futou999">
+	<ThingName>灭魂斧（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_wuqi1000 (50).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>Jin</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>斧,钺</FabaoSuffix>
+		<PhysicalLables>
+                         <li>Sharp</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--木属性剑材料-->
+	<ThingDef Type="Item" Name="Item_Other_Jian997">
+	<ThingName>噬魂剑（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_wuqi1000 (38).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>Mu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>剑</FabaoSuffix>
+		<PhysicalLables>
+                         <li>Sharp</li>
+ 	<li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+<!--水属性弓材料-->
+<ThingDef Type="Item" Name="Item_Other_Gong999">
+	<ThingName>追魂弓（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_wuqi1000 (1).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>弓</FabaoSuffix>
+		<PhysicalLables>
+                         <li>Sharp</li>
+	<li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--土属性刀材料-->
+<ThingDef Type="Item" Name="Item_Other_Dao999">
+	<ThingName>戮魂刀（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_wuqi1000 (24).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>Tu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>刀</FabaoSuffix>
+		<PhysicalLables>
+                         <li>Sharp</li>
+                                <li>Smooth2</li>
+                                <li>GreatThing_Knock</li>
+                                <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+<!--火属性幡材料-->
+<ThingDef Type="Item" Name="Item_Other_Fan999">
+	<ThingName>阴罗幡（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_motian1000 (54).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>幡</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Fly</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<!--无属性珠材料-->
+<ThingDef Type="Item" Name="Item_Other_Zhu999">
+	<ThingName>罗刹珠（材料）</ThingName>	
+	<MaxStack>5</MaxStack>
+	<TexPath>Spr\Object\object_qita1000 (113).png</TexPath>
+	<Desc>上古修仙教派阴罗教用玄铁炼制，为内门弟子专用法器，现为修仙界炼宝的上佳材料。</Desc>
+	<Beauty>7</Beauty>	
+	<Rate>12</Rate>	
+        <ElementKind>None</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>珠</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+
+
+<!--青龙元神-->
+<ThingDef Type="Item" Name="Item_Other_Qinglong01">
+	<ThingName>青龙元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (59).png</TexPath>
+        <Desc>东方青龙，甲乙木也，澄之不清，搅之不浊，近不可取，远不可舍，潜藏变化无尽也。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Mu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Mu</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--朱雀元神-->
+<ThingDef Type="Item" Name="Item_Other_Zhuque01">
+	<ThingName>朱雀元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (3).png</TexPath>
+        <Desc>南方朱雀，为乐之本也，五分其身，以三为上，以二为下，三天两地之义也。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Huo</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--白虎元神-->
+<ThingDef Type="Item" Name="Item_Other_Baihu01">
+	<ThingName>白虎元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (23).png</TexPath>
+        <Desc>西方白虎，英英素质，缟身如雪，威摄禽兽，啸动山林。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Jin</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Jin</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--玄武元神-->
+<ThingDef Type="Item" Name="Item_Other_Xuanwu01">
+	<ThingName>玄武元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (70).png</TexPath>
+        <Desc>北方玄武，谓龟蛇。位在北方，故曰玄。身有鳞甲，故曰武。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Shui</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--山岳巨猿元神-->
+<ThingDef Type="Item" Name="Item_Other_Juyuan01">
+	<ThingName>山岳巨猿元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (46).png</TexPath>
+        <Desc>奇虫异兽榜，四十六位，移山搬岳，力大无穷。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Tu</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+                        <li>GreatThing_Fly</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Tu</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+<!--九尾狐元神-->
+<ThingDef Type="Item" Name="Item_Other_Juweihu01">
+	<ThingName>九尾狐元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (72).png</TexPath>
+        <Desc>奇虫异兽榜，九位。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>None</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>None</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--蜘蛛元神-->
+<ThingDef Type="Item" Name="Item_Other_Tianzhu01">
+	<ThingName>天晶蛛元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (33).png</TexPath>
+        <Desc>奇虫异兽榜，三十三位，身体若玄天晶石构成，坚硬无比，身含剧毒。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>None</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>None</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--蝎子元神-->
+<ThingDef Type="Item" Name="Item_Other_Xiezi01">
+	<ThingName>嗜血蝎元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (28).png</TexPath>
+        <Desc>奇虫异兽榜，二十八位，嗜血无比，尾部锋利，沾之十死无生。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Huo</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--蝴蝶元神-->
+<ThingDef Type="Item" Name="Item_Other_Hudie01">
+	<ThingName>幻心蝶元神</ThingName>
+        <TexPath>Spr\Object\object_yishou1000 (48).png</TexPath>
+        <Desc>奇虫异兽榜，四十八位，蝶翼扇动间忽隐忽现，见者如梦似幻。</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>灵</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Ling</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	<Ling>
+		<LingSource>30000</LingSource>
+	</Ling>
+	<Element>
+		<Kind>Shui</Kind>
+		<Value>12</Value>         
+		<Radius>9</Radius>
+		<Failing>0.1</Failing>
+		<FailRadius>1</FailRadius>
+	</Element>
+	</ThingDef>
+
+<!--分身-->
+<ThingDef Type="Item" Name="Item_Other_Fenshen01">
+	<ThingName>混元分身</ThingName>
+        <TexPath>Spr\Object\object_kuilei1000.png</TexPath>
+        <Desc>分身</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Chaos</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>分身</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<ThingDef Type="Item" Name="Item_Other_Fenshen02">
+	<ThingName>七情分身</ThingName>
+        <TexPath>Spr\Object\object_kuilei1000 (44).png</TexPath>
+        <Desc>分身</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Shui</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>分身</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Rot</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+<ThingDef Type="Item" Name="Item_Other_Fenshen03">
+	<ThingName>六欲分身</ThingName>
+        <TexPath>Spr\Object\object_kuilei1000 (67).png</TexPath>
+        <Desc>分身</Desc>
+        <Beauty>75</Beauty>	
+        <Rate>12</Rate>
+	<ElementKind>Huo</ElementKind>
+	<Item>
+		<NotRandom>1</NotRandom>
+                <FabaoSuffix>分身</FabaoSuffix>
+		<PhysicalLables>
+                        <li>Smooth2</li>
+                        <li>GreatThing_Fly</li>
+                        <li>GreatThing_Ling</li>
+                        <li>GreatThing_Attack</li>
+                        <li>GreatThing_Knock</li>
+		</PhysicalLables>
+		<BeMaterial>
+			<NamePrefix></NamePrefix>
+			<RateWhenBeMain>8</RateWhenBeMain>
+		</BeMaterial>
+	</Item>
+	</ThingDef>
+
+
+
+
+	
+
+</List></ThingDefs>
+

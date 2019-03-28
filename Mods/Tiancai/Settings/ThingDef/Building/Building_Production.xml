@@ -1,0 +1,46 @@
+﻿<ThingDefs><List>
+	<ThingDef Type="Building" Name="DiePlace" Parent="FurnitureBase">
+	<ThingName>遗体停放点</ThingName>	
+	<Desc>苦力搜集弥留人士的地点。</Desc>
+	<TileID>271</TileID>
+	<Color>655E00FF</Color>
+	<SelectAble>1</SelectAble>	
+	<CastShadow>0</CastShadow>
+	<BlockLight>0</BlockLight>	
+	<MaxHitPoints>1</MaxHitPoints>
+	<VisionRadius>0</VisionRadius>
+	<BlockMissile>0</BlockMissile>
+	<Flammability>
+		<Flammability>0</Flammability>
+		<FlameSpawnThingDef></FlameSpawnThingDef>
+		<FlameSpawnChance>0</FlameSpawnChance>
+		<BurningPoint>500</BurningPoint>
+	</Flammability>
+	<Tags>
+		<Tag Name="DiePlace" Level="1"/>
+	</Tags>
+	<ColliderKind>None</ColliderKind>
+	<Collider>
+		<!--(0Empty 1Base)+(2EmptyCenter 4EmptyWorkspace)-->
+		<Data>
+		[6],
+		</Data>
+		<WorkOffset>
+			<li Index="0" Ang="180"/>
+		</WorkOffset>	
+	</Collider>
+	<Building>
+		<AutoUnLock>1</AutoUnLock>
+		<NoFengshui>1</NoFengshui>
+		<NoFight>1</NoFight>		
+		<TerrainAffordanceNeeded>GroundShallowWater</TerrainAffordanceNeeded>
+		<BePackage>0</BePackage>	
+		<BasePracticeEffectiveness>1.2</BasePracticeEffectiveness>
+		<BeMade>
+			<WorkToMake>1</WorkToMake>
+			<Quality>0</Quality>
+			<CostStuffCount>0</CostStuffCount>
+		</BeMade>
+	</Building>
+	</ThingDef>	
+</List></ThingDefs>
