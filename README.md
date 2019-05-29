@@ -266,49 +266,7 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 
 
 
-[![Deploy CFN Template in us-west-2](./images/deploy-to-aws.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=GuardDuty-Hands-On&templateURL=https://s3-us-west-2.amazonaws.com/sa-security-specialist-workshops-us-west-2/guardduty-hands-on/guardduty-cfn-template.yml)
-
-
-
-Table CSS test
-
-ID | Item | Remarks
----|------|--------
-1  |灵淬  |测试
-2| 幽淬| 测试
-
-### Title
-
-* [Getting Started](#started) 
-* [Deploy the Environment](#deploy) 
-* [Scenario 1 – Compromised EC2 Instance](#attack1) 
-* [Scenario 2 – Compromised IAM Credentials](#attack2)
-* [Scenario 3 – IAM Role Credential Exfiltration](#attack3)
-* [Summary](#summary)
-* [Clean Up](#cleanup)
-
-**First Click**:
-
-> Quote block
-
-````
-  Code block
-````
-
-
-#### Scenario 1 – Compromised EC2 instance <a name="attack1"/> </a>
-
-
-
-After an uneventful yet unnecessarily long commute to work, you arrived at the office on Monday morning. You grabbed a cup of coffee, sat down in your cube, opened up your laptop and begin to go through your emails. Soon after you begin though you start receiving emails indicating that GuardDuty has detected new threats. You don’t yet know the extent of the threats but you quickly begin to investigate. Now the good news is that your coworker Alice has already set up some hooks for specific findings so that they will be automatically remediated. 
-
-
-#### Questions
-* Which data source did GuardDuty use to identify this threat?
-* Will isolating the instance have any effect on an application running on the instance?
-* How could you add more detail to the email notifications?
-
-#### Deploy the environment <a name="deploy"/> </a>
+## 图片资源
 
 
 S/N	|	Category	|	Image	|	File
