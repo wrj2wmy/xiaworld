@@ -7,6 +7,7 @@
 ![](./Resources/xiaworld_tree_map.png)
 
 了解dnspy的搜索功能能更快的精准定位，找到所需要的代码。
+快捷键 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>k</kbd>
 ![](./Resources/dnspy_search_panel.png)
 
 
