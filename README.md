@@ -3,16 +3,16 @@
 
 ## 目录
 
-[在开始之前](https://github.com/wrj2wmy/xiaworld#在开始之前)
-[快速画符相关的修改](https://github.com/wrj2wmy/xiaworld#快速画符相关的修改)
-[幽淬相关的修改](https://github.com/wrj2wmy/xiaworld#幽淬相关的修改)
-[灵淬相关的修改](https://github.com/wrj2wmy/xiaworld#灵淬相关的修改)
-[大凶房掉三种魄的修改](https://github.com/wrj2wmy/xiaworld#大凶房掉三种魄的修改)
-[历练相关的修改](https://github.com/wrj2wmy/xiaworld#历练相关的修改)
-[炼宝相关的修改](https://github.com/wrj2wmy/xiaworld#炼宝相关的修改)
-[门派人数上限的修改](https://github.com/wrj2wmy/xiaworld#门派人数上限的修改)
-[傀儡相关的修改](https://github.com/wrj2wmy/xiaworld#傀儡相关的修改)
-[自动搜索尸体，剥皮动物，搬运尸体去指定地点](https://github.com/wrj2wmy/xiaworld#自动搜索尸体，剥皮动物，搬运尸体去指定地点)
+* [在开始之前](https://github.com/wrj2wmy/xiaworld#在开始之前)
+* [快速画符相关的修改](https://github.com/wrj2wmy/xiaworld#快速画符相关的修改)
+* [幽淬相关的修改](https://github.com/wrj2wmy/xiaworld#幽淬相关的修改)
+* [灵淬相关的修改](https://github.com/wrj2wmy/xiaworld#灵淬相关的修改)
+* [大凶房掉三种魄的修改](https://github.com/wrj2wmy/xiaworld#大凶房掉三种魄的修改)
+* [历练相关的修改](https://github.com/wrj2wmy/xiaworld#历练相关的修改)
+* [炼宝相关的修改](https://github.com/wrj2wmy/xiaworld#炼宝相关的修改)
+* [门派人数上限的修改](https://github.com/wrj2wmy/xiaworld#门派人数上限的修改)
+* [傀儡相关的修改](https://github.com/wrj2wmy/xiaworld#傀儡相关的修改)
+* [自动搜索剥皮搬运的修改](https://github.com/wrj2wmy/xiaworld#自动搜索尸体，剥皮动物，搬运尸体去指定地点)
 
 ## 在开始之前
 
@@ -810,7 +810,7 @@ public int CheckSpecialFlag(int name)
 	return result;
 }
 ```
-## 自动搜索尸体，剥皮动物，搬运尸体去指定地点
+## 自动搜索剥皮搬运的修改
 
 **【搜索内容】**
 ![](./Resources/search_dodeath.png)
