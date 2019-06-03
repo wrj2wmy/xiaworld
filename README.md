@@ -1,5 +1,6 @@
 # XiaWorld
-了不起的修仙模拟器MOD教程
+了不起的修仙模拟器 `Assembly-CSharp.dll` 修改教程
+文件地址：*Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed*
 
 ## 目录
 
@@ -21,6 +22,7 @@
 ![](./Resources/xiaworld_tree_map.png)
 
 了解dnspy的搜索功能能更快的精准定位，找到所需要的代码。
+
 快捷键 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>k</kbd>
 
 ![](./Resources/dnspy_search_panel.png)
@@ -30,6 +32,9 @@
 ## 快速画符相关的修改
 
 ### 快速画符品质100%
+
+**【搜索内容】**
+![](./Resources/search_quickp.png)
 
 **【修改的类】** Wnd_Painter
 
