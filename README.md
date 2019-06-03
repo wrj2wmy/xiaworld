@@ -89,6 +89,9 @@ private void OnSelectGong(EventContext context)
 
 ## 幽淬相关的修改
 
+**【搜索内容】**
+![](./Resources/search_youpowerup.png)
+
 **【原版代码】** 
 ```csharp
 public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
@@ -180,6 +183,8 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 
 ## 灵淬相关的修改
 
+**【搜索内容】**
+![](./Resources/search_lingpowerup.png)
 
 **【原版代码】**
 ```csharp
@@ -275,9 +280,21 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 
 ## 大凶房掉三种魄的修改
 
+**【搜索内容】**
+![](./Resources/search_changetocorpse.png)
+
 **【原版代码】**
 ```csharp
-To be added
+if (World.RandomRate(a))
+{
+	this.SetSpecialFlag(g_emNpcSpecailFlag.FLAG_DROPSOULCRYSTAL, 1);
+	ItemThing itemThing = ItemRandomMachine.RandomItem("Item_SoulCrystalYou", null, 0, 12, -1f, 1);
+	if (itemThing != null)
+	{
+		itemThing.Author = this.GetName();
+		base.map.DropItem(itemThing, base.Key, true, true, true, true, 0f);
+	}
+}
 ```
 
 **【修改内容】**
@@ -292,7 +309,8 @@ if (World.RandomRate(a))
 		base.map.DropItem(itemThing, base.Key, true, true, true, true, 0f);
 	}
 }
-if (World.RandomRate(a * 0.5f))
+//---------------------------------------- 以下是新增的内容 ----------------------------------------
+if (World.RandomRate(a * 0.5f))//加了一点随机因素，概率为幽魄的50%
 {
 	ItemThing itemThing2 = ItemRandomMachine.RandomItem("Item_SoulCrystalLing", null, 0, 12, -1f, 1);
 	if (itemThing2 != null)
@@ -301,7 +319,7 @@ if (World.RandomRate(a * 0.5f))
 		base.map.DropItem(itemThing2, base.Key, true, true, true, true, 0f);
 	}
 }
-if (World.RandomRate(a * 0.25f))
+if (World.RandomRate(a * 0.25f))//加了一点随机因素，概率为幽魄的25%
 {
 	ItemThing itemThing3 = ItemRandomMachine.RandomItem("Item_SoulCrystalNing", null, 0, 12, -1f, 1);
 	if (itemThing3 != null)
@@ -310,11 +328,15 @@ if (World.RandomRate(a * 0.25f))
 		base.map.DropItem(itemThing3, base.Key, true, true, true, true, 0f);
 	}
 }
+//---------------------------------------- 以上是新增的内容 ----------------------------------------
 ```
 
 ## 历练相关的修改
 
 ### 瞬间历练 + 瞬间驻扎
+
+**【搜索内容】**
+![](./Resources/search_placesmgr.png)
 
 **【原版代码】**
 ```csharp
@@ -482,8 +504,16 @@ public override void Step(float dt)
 
 ### 真仙可历练
 
+**【搜索内容】**
+![](./Resources/search_godexplore.png)
+
+
 **【原版代码】**
 ```csharp
+if (npc.PropertyMgr.Practice.TouchNeck && npc.PropertyMgr.Practice.CurNeck != null && npc.PropertyMgr.Practice.CurNeck.NeckCountdown > 0f && !npc.HasSpecialFlag(g_emNpcSpecailFlag.FLAG_PRACTICEDIE))//原版代码的判断条件
+{
+	//省略了N多代码...
+}
 ```
 
 **【修改内容】**
@@ -546,6 +576,9 @@ if (!this.UIInfo.m_goexp.grayed)
 ## 炼宝相关的修改
 
 ### 成功率100%
+
+**【搜索内容】**
+![](./Resources/search_makefabao.png)
 
 **【原版代码】**
 ```csharp
@@ -637,6 +670,9 @@ private void MakeFaBao()
 
 ### 神器概率100%
 
+**【搜索内容】**
+![](./Resources/search_initfabao.png)
+
 **【原版代码】**
 ```csharp
 ```
@@ -690,8 +726,26 @@ public void InitFabao(ItemThing oitem, g_emItemLable kind, float lingfix = 1f, f
 
 ## 门派人数上限的修改
 
+**【搜索内容】**
+![](./Resources/search_schoolmax.png)
+
 **【原版代码】**
 ```csharp
+public static int[] SchoolMaxNpc = new int[]
+{
+	12,
+	12,
+	24,
+	36
+};
+//内门
+public static int[] SchoolMaxDNpc = new int[]
+{
+	12,
+	12,
+	24,
+	36
+};
 ```
 
 **【修改内容】**
@@ -716,6 +770,9 @@ public static int[] SchoolMaxDNpc = new int[]
 
 ## 傀儡相关的修改
 
+**【搜索内容】**
+![](./Resources/search_checkspecialflag.png)
+
 ### 去除一人一傀儡的限制
 
 **【原版代码】**
@@ -734,9 +791,46 @@ public int CheckSpecialFlag(int name)
 {
 	int result = 0;
 	this.SpecialFlag.TryGetValue(name, out result);
-	//过滤绑定傀儡的两个标记达到一人多傀儡的效果。
-	if ((g_emNpcSpecailFlag)name == g_emNpcSpecailFlag.NpcBindPuppet || (g_emNpcSpecailFlag)name == g_emNpcSpecailFlag.PuppetBindNpc)
+	//过滤绑定傀儡的两个标记达到允许一人多傀儡的效果。
+	if ((g_emNpcSpecailFlag)name == g_emNpcSpecailFlag.NpcBindPuppet || (g_emNpcSpecailFlag)name == g_emNpcSpecailFlag.PuppetBindNpc)//编译器会把枚举类型转换成数值。 编译后会变成 if (name == 10013 || name == 10014)，这是对的。
 		result = 0;
 	return result;
+}
+```
+## 自动搜索尸体，剥皮动物，搬运尸体去指定地点
+
+**【搜索内容】**
+![](./Resources/search_dodeath.png)
+
+**【原版内容】**
+```csharp
+```
+
+**【修改内容】**
+```csharp
+public void DoDeath(bool god = false)
+{
+	this.LeaveFlying();
+	if (this.JobEngine.CurJob != null)
+	{
+		this.JobEngine.InterruptJob("DoDeath", false);
+	}
+	if (!base.IsPlayerThing && this.Race.RaceType != g_emNpcRaceType.Wisdom && this.IsDeath)//如果不是智慧生物并且已死
+	{
+		base.AddCommand("Slaughter", new object[0]);//添加剥皮指令
+	}
+	if (this.Race.RaceType == g_emNpcRaceType.Wisdom)//如果是智慧生物，表示是人。
+	{
+		base.AddCommand("Seach", new object[0]);//添加搜索
+		BuildingThing buildingThing = base.map.Things.FindBuilding(this, 9999, null, 0, false, true, 0, 9999, null, "DiePlace", true);//全图查找建筑目标DiePlace,这个是自己做的Mod，新建了一个集结点。
+		if (buildingThing != null)//如果找到目标地点，添加搬运的指令，达到自动搬运尸体的效果。
+		{
+			base.AddCommand("MoveNpc", new object[]
+			{
+				buildingThing.Key
+			});
+		}
+	}
+	//省略N多代码...
 }
 ```
