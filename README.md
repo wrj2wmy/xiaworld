@@ -12,7 +12,7 @@
 * [炼宝相关的修改](https://github.com/wrj2wmy/xiaworld#炼宝相关的修改)
 * [门派人数上限的修改](https://github.com/wrj2wmy/xiaworld#门派人数上限的修改)
 * [傀儡相关的修改](https://github.com/wrj2wmy/xiaworld#傀儡相关的修改)
-* [自动搜索剥皮搬运的修改](https://github.com/wrj2wmy/xiaworld#自动搜索尸体，剥皮动物，搬运尸体去指定地点)
+* [自动搜索剥皮搬运的修改](https://github.com/wrj2wmy/xiaworld#自动搜索剥皮搬运的修改)
 
 ## 在开始之前
 
