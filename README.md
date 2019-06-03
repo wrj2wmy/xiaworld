@@ -4,10 +4,12 @@
 ## 在开始之前
 
 明白修仙模拟器源代码的树形结构能更快的找到所需要的类。
+
 ![](./Resources/xiaworld_tree_map.png)
 
 了解dnspy的搜索功能能更快的精准定位，找到所需要的代码。
 快捷键 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>k</kbd>
+
 ![](./Resources/dnspy_search_panel.png)
 
 
@@ -26,17 +28,17 @@
 **【修改内容】** 
 ```csharp
 private void QuickP()
+{
+	if (this.UIInfo.m_n62.grayed)
 	{
-		if (this.UIInfo.m_n62.grayed)
-		{
-			return;
-		}
-		if (this.CallBack != null)
-		{
-			this.CallBack(this.SelectName, 1f, null, false);//直接改成1f,固定100%画符品质
-		}
-		base.Hide();
+		return;
 	}
+	if (this.CallBack != null)
+	{
+		this.CallBack(this.SelectName, 1f, null, false);//直接改成1f,固定100%画符品质
+	}
+	base.Hide();
+}
 ````
 ### 跳过第一次手动画符
 
@@ -50,38 +52,38 @@ private void QuickP()
 **【修改内容】** 
 ```csharp
 private void OnSelectGong(EventContext context)
+{
+	string text = (string)(context.data as GObject).data;
+	if (this.SelectName == text)
 	{
-		string text = (string)(context.data as GObject).data;
-		if (this.SelectName == text)
+		return;
+	}
+	this.SelectName = text;
+	if (string.IsNullOrEmpty(text))
+	{
+		MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", null);
+		this.UIInfo.m_n62.grayed = true;
+		this.UIInfo.m_n63.text = null;
+	}
+	else
+	{
+		SpellDef spellDef = PracticeMgr.Instance.GetSpellDef(text);
+		MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", Resources.Load<Texture2D>(spellDef.Template));
+		float num = World.Instance.GetFuValue(text);
+		num = 1f;//固定获取的画符值为100%，跳过第一次为0的情况。
+		if (num > 0f)
 		{
-			return;
-		}
-		this.SelectName = text;
-		if (string.IsNullOrEmpty(text))
-		{
-			MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", null);
-			this.UIInfo.m_n62.grayed = true;
-			this.UIInfo.m_n63.text = null;
+			this.UIInfo.m_n62.grayed = false;
+			this.UIInfo.m_n63.text = string.Format("{0:P0}", num);
 		}
 		else
 		{
-			SpellDef spellDef = PracticeMgr.Instance.GetSpellDef(text);
-			MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", Resources.Load<Texture2D>(spellDef.Template));
-			float num = World.Instance.GetFuValue(text);
-			num = 1f;//固定获取的画符值为100%，跳过第一次为0的情况。
-			if (num > 0f)
-			{
-				this.UIInfo.m_n62.grayed = false;
-				this.UIInfo.m_n63.text = string.Format("{0:P0}", num);
-			}
-			else
-			{
-				this.UIInfo.m_n62.grayed = true;
-				this.UIInfo.m_n63.text = null;
-			}
+			this.UIInfo.m_n62.grayed = true;
+			this.UIInfo.m_n63.text = null;
 		}
-		MapRender.Instance.PaintPanel.ResetPaint();
 	}
+	MapRender.Instance.PaintPanel.ResetPaint();
+}
 ````
 
 
@@ -268,7 +270,6 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 	}
 	return false;
 }
-
 ```
 
 
@@ -647,8 +648,8 @@ public void InitFabao(ItemThing oitem, g_emItemLable kind, float lingfix = 1f, f
 	float x = oitem.LingV * lingfix;
 	int num = oitem.Rate + (int)GameDefine.GetValueByMap<float>(GameDefine.Ling2FabaoRate, x);
 	if (num < 12 || !World.RandomRate(godrate))//这一段没改，但是编译器自动修改了代码。
-	{										   //这一段没改，但是编译器自动修改了代码。
-	}										   //这一段没改，但是编译器自动修改了代码。
+	{//这一段没改，但是编译器自动修改了代码。
+	}//这一段没改，但是编译器自动修改了代码。
 	num = 12;//直接强制品阶为12，达到100%获得神器的效果。
 	this.InitFabao(num, oitem.def, (oitem.StuffDef == null) ? null : oitem.StuffDef.Name, oitem.GetName(), kind, Qualityadd, oitem.GetEquptMod(), oitem.ElementKind);
 	this.Fabao.OName = oitem.GetName();
@@ -719,6 +720,12 @@ public static int[] SchoolMaxDNpc = new int[]
 
 **【原版代码】**
 ```csharp
+public int CheckSpecialFlag(int name)
+{
+	int result = 0;
+	this.SpecialFlag.TryGetValue(name, out result);
+	return result;
+}
 ```
 
 **【修改内容】**
