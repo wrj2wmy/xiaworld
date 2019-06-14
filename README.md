@@ -868,4 +868,4 @@ public void DoDeath(bool god = false)
 
 维护更新不易，如果觉得MOD用着还行，或者教学内容有帮助的话，扫描下方二维码给楼主买根辣条吧，谢谢。
 
-
+![](./Resources/latiao.jpg)
