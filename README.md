@@ -2,13 +2,11 @@
 
 了不起的修仙模拟器 `Assembly-CSharp.dll` 修改教程
 
-文件地址：*Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed*
+文件地址：**Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed**
 
 ## MOD下载地址
 
-[百度网盘](https://pan.baidu.com/s/1IL1RBf-1NBABFJwNRNEaPw)
-
-提取码: *5jv3*
+[百度网盘](https://pan.baidu.com/s/1IL1RBf-1NBABFJwNRNEaPw) 提取码: **5jv3**
 
 ## 连载帖子
 
