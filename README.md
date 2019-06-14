@@ -5,11 +5,15 @@
 文件地址：*Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed*
 
 ## MOD下载地址
+
 ![](https://pan.baidu.com/s/1IL1RBf-1NBABFJwNRNEaPw)
+
 提取码: *5jv3*
 
 ## 连载帖子
+
 ![百度贴吧](https://tieba.baidu.com/p/6034323473?pn=1)
+
 ![3DM](http://bbs.3dmgame.com/thread-5847867-1-1.html)
 
 ## 目录
