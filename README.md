@@ -8,7 +8,7 @@
 
 [百度网盘](https://pan.baidu.com/s/1IL1RBf-1NBABFJwNRNEaPw) 提取码: **5jv3**
 
-## 连载帖子
+## 不定期更新的帖子
 
 * [百度贴吧](https://tieba.baidu.com/p/6034323473?pn=1)
 * [3DM](http://bbs.3dmgame.com/thread-5847867-1-1.html)
@@ -863,3 +863,9 @@ public void DoDeath(bool god = false)
 	//省略N多代码...
 }
 ```
+
+## 赞助
+
+维护更新不易，如果觉得MOD用着还行，或者教学内容有帮助的话，扫描下方二维码给楼主买根辣条吧，谢谢。
+
+
