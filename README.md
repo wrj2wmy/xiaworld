@@ -238,7 +238,8 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 	{
 		return false;
 	}
-	if (World.RandomRate(Mathf.Pow(0.9f + badd, (float)(base.Rate + this.YouPower))))//底数0.9，越淬概率越低
+	float a = Mathf.Pow(GameDefine.SOULCRYSTALLING_BASE + badd, (float)(base.Rate + this.YouPower));
+	if (World.RandomRate(a))//底数0.9，越淬概率越低
 	{
 		ItemThing itemThing;
 		if (base.Count == 1)
@@ -255,7 +256,7 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 		if (itemThing.IsFaBao)//判断是否为法宝
 		{
 			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);//获取现有最大灵力
-			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);//最大灵力*1.1，每次增加最大灵力10%
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.05f);//最大灵力*1.1，每次增加最大灵力10%
 		}
 		else
 		{
@@ -269,6 +270,13 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 ```
 
 **【修改内容】** 
+<kbd>ctrl</kbd> + <kbd>点击</kbd> 原代码中的 *GameDefine.SOULCRYSTALLING_BASE*
+
+```csharp
+public static float SOULCRYSTALLING_BASE = 1f;//把0.9基数改成1f
+```
+
+
 ```csharp
 public bool SoulCrystalLingPowerUp(float badd = 0f)
 {
@@ -769,20 +777,87 @@ case g_emIndividualCommandType.Teach:
 
 **【原版代码】**
 ```csharp
+protected override void OnLeaveJob(KStateQUnit unit)
+{
+	if (base.Did)
+	{
+		CommandTeachHim commandTeachHim = this.CMD as CommandTeachHim;
+		Npc npc = ThingMgr.Instance.FindThingByID(commandTeachHim.NpcID) as Npc;
+		EsotericaData sysEsoterica = EsotericaMgr.Instance.GetSysEsoterica(commandTeachHim.EId);
+		float num = 0.75f;//非师徒传功参悟比例75%
+		if (npc.PropertyMgr.Practice.MasterID == base.Worker.ID)
+		{
+			num = 0.5f;//师徒传功参悟比例50%
+		}
+		float num2 = npc.PropertyMgr.Practice.GetTreeExpNeed(sysEsoterica.GetRealDifficulty(npc.PropertyMgr.Practice.Gong.ElementKind)) * num;
+		if (num2 <= npc.PropertyMgr.Practice.TreeExp)
+		{
+			npc.PropertyMgr.Practice.LearnEsotericaEx(commandTeachHim.EId, num, true, false);
+		}
+		GameWatch.Instance.Achievement.UnLockAchievement(2012);
+		this.CMD.FinishCommand(false, false);
+	}
+}
 ```
 
 **【修改内容】**
+
+想改成多少都行，随你喜好。 游戏原版比例还算合理所以MOD没有改这个数值。
+
 ```csharp
+protected override void OnLeaveJob(KStateQUnit unit)
+{
+	if (base.Did)
+	{
+		CommandTeachHim commandTeachHim = this.CMD as CommandTeachHim;
+		Npc npc = ThingMgr.Instance.FindThingByID(commandTeachHim.NpcID) as Npc;
+		EsotericaData sysEsoterica = EsotericaMgr.Instance.GetSysEsoterica(commandTeachHim.EId);
+		float num = 0.25f;//非师徒传功参悟比例25%
+		if (npc.PropertyMgr.Practice.MasterID == base.Worker.ID)
+		{
+			num = 0.1f;//师徒传功参悟比例10%
+		}
+		float num2 = npc.PropertyMgr.Practice.GetTreeExpNeed(sysEsoterica.GetRealDifficulty(npc.PropertyMgr.Practice.Gong.ElementKind)) * num;
+		if (num2 <= npc.PropertyMgr.Practice.TreeExp)
+		{
+			npc.PropertyMgr.Practice.LearnEsotericaEx(commandTeachHim.EId, num, true, false);
+		}
+		GameWatch.Instance.Achievement.UnLockAchievement(2012);
+		this.CMD.FinishCommand(false, false);
+	}
+}
 ```
 
 ### 传功时间减少
 
 **【原版代码】**
 ```csharp
+protected override List<ToilBase> GetToilList()
+{
+	CommandTeachHim commandTeachHim = this.CMD as CommandTeachHim;
+	Npc npc = ThingMgr.Instance.FindThingByID(commandTeachHim.NpcID) as Npc;
+	return new List<ToilBase>
+	{
+		new ToilFaceIdle(npc.ID, base.Worker.ID, 9999f, TFMgr.Get("接受传授"), false, "dazuo", null),
+		ToilGoto.GotoThing(npc, g_emPathEndMode.Touch, 0, true, null).SetMinDis(1f),
+		new ToilIdle(20f, false, TFMgr.Get("传授"), "chuangong1", false, 0f).SetFlag("teach")
+	};
+}
 ```
 
 **【修改内容】**
 ```csharp
+protected override List<ToilBase> GetToilList()
+{
+	CommandTeachHim commandTeachHim = this.CMD as CommandTeachHim;
+	Npc npc = ThingMgr.Instance.FindThingByID(commandTeachHim.NpcID) as Npc;
+	return new List<ToilBase>
+	{
+		new ToilFaceIdle(npc.ID, base.Worker.ID, 9999f, TFMgr.Get("接受传授"), false, "dazuo", null),
+		ToilGoto.GotoThing(npc, g_emPathEndMode.Touch, 0, true, null).SetMinDis(1f),
+		new ToilIdle(0.01f, false, TFMgr.Get("传授"), "chuangong1", false, 0f).SetFlag("teach")
+	};//把上面一行的20f改成0.01f，达到1s传功的效果
+}
 ```
 
 ## 门派人数上限的修改
@@ -871,7 +946,9 @@ public int CheckSpecialFlag(int name)
 ```csharp
 public void DoDeath(bool god = false)
 {
+	//省略N多代码
 	this.LeaveFlying();
+	//---------------------------------------以下为新增的代码---------------------------------------
 	if (this.JobEngine.CurJob != null)
 	{
 		this.JobEngine.InterruptJob("DoDeath", false);
@@ -892,6 +969,7 @@ public void DoDeath(bool god = false)
 			});
 		}
 	}
+	//---------------------------------------以上为新增的代码---------------------------------------
 	//省略N多代码...
 }
 ```
