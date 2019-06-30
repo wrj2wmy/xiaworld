@@ -11,7 +11,6 @@
 ## 不定期更新的帖子
 
 * [百度贴吧](https://tieba.baidu.com/p/6034323473?pn=1)
-* [3DM](http://bbs.3dmgame.com/thread-5847867-1-1.html)
 
 ## 目录
 
