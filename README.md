@@ -64,56 +64,51 @@ private void QuickP()
 	}
 	if (this.CallBack != null)
 	{
-		this.CallBack(this.SelectName, 1f, null, false);//直接改成1f,固定100%画符品质
+		this.CallBack(this.SelectName, GlobleDataMgr.Instance.GetFuValue(this.SelectName) * 1f, null, false);//把0.95f改成1f,100%继承画符品质
 	}
 	base.Hide();
 }
 ````
+
 ### 跳过第一次手动画符
 
-**【修改的类】** Wnd_Painter
+**【修改的类】** GlobleDataMgr
 
-**【原版代码】** 
-````
-图片
-````
+<kbd>ctrl</kbd> + <kbd>点击</kbd> 上文中的 *GetFuValue* 跳转到 GlobleDataMgr 类。
 
-**【修改内容】** 
 ```csharp
-private void OnSelectGong(EventContext context)
+public float GetFuValue(string name)
 {
-	string text = (string)(context.data as GObject).data;
-	if (this.SelectName == text)
+	if (this.FuSaves == null)//当没有已保存符咒信息的时候
 	{
+		return 1f;//把0f改成1f，让新增的符咒也能达到100%
+	}
+	float result = 0f;
+	this.FuSaves.TryGetValue(name, out result);
+	result = 1f;//添加这一行，让已保存的符咒能达到100%
+	return result;
+}
+
+
+public void SaveFuValue(string name, float v)
+{
+	v = 1f;//添加这一行，强制保存的时候存入值是100%
+	if (this.FuSaves == null)
+	{
+		this.FuSaves = new Dictionary<string, float>();
+	}
+	if (!this.FuSaves.ContainsKey(name))
+	{
+		this.FuSaves.Add(name, v);
 		return;
 	}
-	this.SelectName = text;
-	if (string.IsNullOrEmpty(text))
+	if (v > this.FuSaves[name])
 	{
-		MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", null);
-		this.UIInfo.m_n62.grayed = true;
-		this.UIInfo.m_n63.text = null;
+		this.FuSaves[name] = v;
+		this.modifier = true;
 	}
-	else
-	{
-		SpellDef spellDef = PracticeMgr.Instance.GetSpellDef(text);
-		MapRender.Instance.PainRender.sharedMaterial.SetTexture("_Temp", Resources.Load<Texture2D>(spellDef.Template));
-		float num = World.Instance.GetFuValue(text);
-		num = 1f;//固定获取的画符值为100%，跳过第一次为0的情况。
-		if (num > 0f)
-		{
-			this.UIInfo.m_n62.grayed = false;
-			this.UIInfo.m_n63.text = string.Format("{0:P0}", num);
-		}
-		else
-		{
-			this.UIInfo.m_n62.grayed = true;
-			this.UIInfo.m_n63.text = null;
-		}
-	}
-	MapRender.Instance.PaintPanel.ResetPaint();
 }
-````
+```
 
 
 ## 幽淬相关的修改
@@ -129,7 +124,12 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 	{
 		return false;
 	}
-	if (World.RandomRate(Mathf.Pow(0.9f + badd, (float)(base.Rate + this.YouPower))))//幂函数，0.9为底数，次方数=品阶+幽淬次数
+	float a = Mathf.Pow(GameDefine.SOULCRYSTALYOU_BASE + badd, (float)(base.Rate + this.YouPower));//幂函数，0.9为底数，次方数=品阶+幽淬次数
+	if (irate > 0f)
+	{
+		a = irate;
+	}
+	if (World.RandomRate(a))
 	{
 		ItemThing itemThing;
 		if (base.Count == 1)
@@ -139,15 +139,19 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 		else
 		{
 			itemThing = this.Split(1, true);
-			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f);
-			(UnityEngine.Object.Instantiate(Resources.Load("Effect/System/FlyLine")) as GameObject).GetComponent<FlyLineRender>().Begin(base.Pos, itemThing.Pos, 0.2f, null);
+			base.map.DropItem(itemThing, base.Key, true, true, true, false, 0f, false);
+			FlyLineRender.Fly(base.Pos, itemThing.Pos, 0.2f, null, null, null, "Effect/System/FlyLine");
 		}
-		itemThing.YouPower += v; //幽淬次数+1
-		itemThing.Rate += v;	 //品阶+1
+		itemThing.YouPower += v;//幽淬次数+1
+		itemThing.Rate += v;	//品阶+1
 		if (itemThing.View != null && itemThing.Rate >= 3)
 		{
 			itemThing.View.ShowItemRay(new Color?(GameDefine.GetRateColor(itemThing.Rate)));
 			itemThing.NeedClick = true;
+		}
+		if (itemThing.FSItemState == -1 && itemThing.Rate >= 7 && World.RandomRate(0.005f * (float)itemThing.Rate))
+		{
+			itemThing.FSItemState = 1;
 		}
 		GameWatch.Instance.PlayUIAudio("Sound/ding");
 		return true;
@@ -157,6 +161,13 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 ````
 
 **【修改内容】** 
+
+<kbd>ctrl</kbd> + <kbd>点击</kbd> 原代码中的 *GameDefine.SOULCRYSTALYOU_BASE*
+
+```csharp
+public static float SOULCRYSTALYOU_BASE = 1f;//把0.9基数改成1f
+```
+
 ```csharp
 public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 {
@@ -177,7 +188,7 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 	}
 	else
 	{
-		if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))//底数改为1则100%成功
+		if (World.RandomRate(Mathf.Pow(GameDefine.SOULCRYSTALYOU_BASE + badd, (float)(base.Rate + this.YouPower))))//上面改了底数，这行就不用改了
 		{
 			int num = Mathf.Min(10, base.Count);//判断物品本身数量和10做比较，最多循环10次。
 			for (int i = 0; i < num; i++)//根据上一步算出的数量循环
@@ -199,6 +210,10 @@ public bool SoulCrystalYouPowerUp(float badd = 0f, float irate = 0f, int v = 1)
 				{
 					itemThing.View.ShowItemRay(new Color?(GameDefine.GetRateColor(itemThing.Rate)));
 					itemThing.NeedClick = true;
+				}
+				if (itemThing.FSItemState == -1 && itemThing.Rate >= 7 && World.RandomRate(0.1f * (float)itemThing.Rate))//0.005改成0.1，达到100%产生镇物。
+				{
+					itemThing.FSItemState = 1;
 				}
 			}
 			GameWatch.Instance.PlayUIAudio("Sound/ding");
@@ -261,7 +276,7 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 	{
 		return false;
 	}
-	if (World.RandomRate(Mathf.Pow(1f + badd, (float)(base.Rate + this.YouPower))))//底数改成1，概率100%
+	if (World.RandomRate(Mathf.Pow(GameDefine.SOULCRYSTALLING_BASE + badd, (float)(base.Rate + this.YouPower))))//这里不用改了
 	{
 		ItemThing itemThing;
 		if (base.Count == 1)
@@ -278,13 +293,13 @@ public bool SoulCrystalLingPowerUp(float badd = 0f)
 		if (itemThing.IsFaBao)//判断是否为法宝
 		{
 			float property = itemThing.Fabao.GetProperty(g_emFaBaoP.MaxLing);//获取灵力最大值
-			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, property * 1.1f);//灵力最大值增加10%
+			itemThing.Fabao.SetProperty(g_emFaBaoP.MaxLing, (property < 10000f) ? 10000f : (property * 1.1f));//灵力最大值直接赋值1W，之后再每次增加10%
 			float property2 = itemThing.Fabao.GetProperty(g_emFaBaoP.AttackPower);//获取威力
-			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackPower, property2 * 1.1f);//威力增加10%
-			float property3 = itemThing.Fabao.GetProperty(g_emFaBaoP.RotSpeed);//获取转速
-			itemThing.Fabao.SetProperty(g_emFaBaoP.RotSpeed, property3 * 1.1f);//转速增加10%
-			float property4 = itemThing.Fabao.GetProperty(g_emFaBaoP.LingRecover);//获取灵力回复速度
-			itemThing.Fabao.SetProperty(g_emFaBaoP.LingRecover, property4 * 1.1f);//灵力回复增加10%
+			itemThing.Fabao.SetProperty(g_emFaBaoP.AttackPower, (property2 < 1000f) ? 1000f : (property2 * 1.1f));//威力直接赋值1K，之后再每次增加10%
+			float property3 = itemThing.Fabao.GetProperty(g_emFaBaoP.LingRecover);//获取灵力回复速度
+			itemThing.Fabao.SetProperty(g_emFaBaoP.LingRecover, (property3 < 10000f) ? 10000f : (property3 * 1.1f));//灵力回复直接赋值1W，之后再每次增加10%
+			float property4 = itemThing.Fabao.GetProperty(g_emFaBaoP.RotSpeed);//获取转速
+			itemThing.Fabao.SetProperty(g_emFaBaoP.RotSpeed, property4 * 1.1f);//转速增加10%
 			float property5 = itemThing.Fabao.GetProperty(g_emFaBaoP.Scale);//获取体积
 			itemThing.Fabao.SetProperty(g_emFaBaoP.Scale, property5 * 1.1f);//体积增加10%
 			float property6 = itemThing.Fabao.GetProperty(g_emFaBaoP.TailLenght);//获取拖尾长度
@@ -723,7 +738,7 @@ public void InitFabao(ItemThing oitem, g_emItemLable kind, float lingfix = 1f, f
 
 ## 传功相关的修改
 
-### 无视师徒关系传功
+### 无视关系传功
 
 **【原版代码】**
 ```csharp
@@ -731,6 +746,23 @@ public void InitFabao(ItemThing oitem, g_emItemLable kind, float lingfix = 1f, f
 
 **【修改内容】**
 ```csharp
+case g_emIndividualCommandType.Teach:
+{
+	Npc npc4 = t as Npc;
+	if (!npc4.IsValid || npc4.Rank != g_emNpcRank.Disciple || !npc4.IsPlayerThing)
+	{
+		this.SetHeadMsg(TFMgr.Get("不是内门弟子"), true);
+		return false;
+	}
+	//这里删除了辈分和境界的两个条件判断，达到可以无视关系任意传功的效果。
+	if (npc4.HasSpecialFlag(g_emNpcSpecailFlag.FLAG_MAGIC) || npc4.Lock.FreeCount <= 0)
+	{
+		this.SetHeadMsg(TFMgr.Get("该角色正忙"), true);
+		return false;
+	}
+	this.SetHeadMsg(null, true);
+	return true;
+}
 ```
 
 ### 传功所需参悟减少
