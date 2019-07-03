@@ -24,6 +24,7 @@
 * [门派人数上限的修改](https://github.com/wrj2wmy/xiaworld#门派人数上限的修改)
 * [傀儡相关的修改](https://github.com/wrj2wmy/xiaworld#傀儡相关的修改)
 * [自动搜索剥皮搬运的修改](https://github.com/wrj2wmy/xiaworld#自动搜索剥皮搬运的修改)
+* [符咒全开](https://github.com/wrj2wmy/xiaworld#符咒全开)
 
 ## 在开始之前
 
@@ -584,30 +585,7 @@ if (!this.UIInfo.m_goexp.grayed)
 					{
 						Wnd_Message.Show(string.Format("{0}的的瓶颈即将松动，暂时不宜外出历练。", npc.GetName()), 1, null, true, "历练", 0, 0, string.Empty);
 					}
-					else
-					{
-						float num = (PlacesMgr.Instance.GetCoat(npc, name) * 2f + 120f) / 600f;
-						if (num <= 3f)
-						{
-							npc.AddCommand("GoMapExplore", new object[]
-							{
-								name
-							});
-						}
-						else
-						{
-							Wnd_Message.Show(string.Format("此去路途遥远({2:F2}天)，确定要派遣{0}前往{1}吗？", npc.GetName(), def.DisplayName, num), 2, delegate(string s)
-							{
-								if (s == "1")
-								{
-									npc.AddCommand("GoMapExplore", new object[]
-									{
-										name
-									});
-								}
-							}, true, null, 0, 0, string.Empty);
-						}
-					}
+					//省略N多代码...
 				}
 			}
 		}, g_emNpcRank.Disciple, 1, 10, null, (Npc npc) => npc.CheckCommandSingle("GoMapExplore") == null, string.Format("前往{0}", def.DisplayName), delegate(Npc npc)
@@ -972,6 +950,66 @@ public void DoDeath(bool god = false)
 	//省略N多代码...
 }
 ```
+## 符咒全开
+
+**【修改的类】** NpcEquipData
+
+**【搜索内容】**
+![](./Resources/search_spell6.png)
+
+
+```CSharp
+private void OnFuaClick(EventContext context)
+{
+	//省略N多代码...
+	if (!this.npc.Equip.CheackFuThingActive((int)g_emEquipType))
+	{
+		if (!this.npc.Equip.ActiveItemThing(equipReal, g_emEquipType, false))
+		{
+			Wnd_Message.Show(TFMgr.Get("同时激活的符咒最多只能有三个！"), 1, null, false, null, 0, 0, string.Empty);
+		}
+	}
+	else
+	{
+		this.npc.Equip.CloseItemthing(equipReal, g_emEquipType);
+	}
+	((UI_Checkbox)context.sender).selected = this.npc.Equip.CheackFuThingActive((int)g_emEquipType);
+}
+```
+<kbd>ctrl</kbd> + <kbd>点击</kbd> 上文中的 *ActiveItemThing* 跳转到 NpcEquipData 类。
+
+**【原版内容】**
+```csharp
+public bool ActiveItemThing(ItemThing item, g_emEquipType type, bool normal = false)
+{
+	if (type > g_emEquipType._FuBegin && type < g_emEquipType._FuEnd)
+	{
+		if (this._FuThingActiveList.Count >= 3)//这个3就是罪魁祸首
+		{
+			return false;
+		}
+		this._FuThingActiveList.Add((int)type);
+	}
+	//省略N多代码...
+}
+```
+
+**【修改内容】**
+```csharp
+public bool ActiveItemThing(ItemThing item, g_emEquipType type, bool normal = false)
+{
+	if (type > g_emEquipType._FuBegin && type < g_emEquipType._FuEnd)
+	{
+		if (this._FuThingActiveList.Count >= 6)//改成6就全开了。或者删除这个if判断也可以。
+		{
+			return false;
+		}
+		this._FuThingActiveList.Add((int)type);
+	}
+	//省略N多代码...
+}
+```
+
 
 ## 赞助
 
