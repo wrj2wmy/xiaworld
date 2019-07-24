@@ -49,5 +49,20 @@
 			<li Name="DanMake_YieldAddP" AddV="10"/><!--炼丹速度加成-->
 		</Properties>
 	</Modifier>
+
+
+	<!--修改游戏原版的属性-->
+	<Modifier Name="Gong11_LvUpEsoterica_12" Type="Normal">
+		<DisplayName>Gong11_LvUpEsoterica_12</DisplayName>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="NpcFight_FabaoPowerAddP" AddP="25"/>
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="0.5"/>
+			<li Name="NpcFight_FabaoMaxLingAddP" AddP="-9999"/>
+			<li Name="NpcFight_FabaoLingRecoverAddP" AddP="-9999"/>
+		</Properties>
+	</Modifier> 
 	
 </List></ModifierDefs>

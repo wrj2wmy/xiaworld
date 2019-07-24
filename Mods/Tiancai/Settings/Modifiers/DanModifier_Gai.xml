@@ -1,7 +1,7 @@
 <ModifierDefs><List>
 	<Modifier Name="Dan_IncreaseLife_Gai" Type="Normal">
 		<DisplayName>大圣丹</DisplayName>
-		<Desc></Desc>
+		<Desc>寿命增加三甲子，天谴减10，道行减50，根本灵气增加1000，根本灵气增加100%</Desc>
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
 		<Display>0</Display>
