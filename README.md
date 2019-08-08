@@ -2,7 +2,8 @@
 
 了不起的修仙模拟器 `Assembly-CSharp.dll` 修改教程
 
-##最新支持版本：**0.95306**
+
+## 最新支持版本：**0.95306**
 
 文件地址：**Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed**
 
