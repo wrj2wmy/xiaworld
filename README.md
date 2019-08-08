@@ -2,7 +2,7 @@
 
 了不起的修仙模拟器 `Assembly-CSharp.dll` 修改教程
 
-##支持版本：**0.9522**
+##最新支持版本：**0.95306**
 
 文件地址：**Steam安装路径\Steam\steamapps\common\AmazingCultivationSimulator\Amazing Cultivation Simulator_Data\Managed**
 
@@ -727,8 +727,37 @@ public void InitFabao(ItemThing oitem, g_emItemLable kind, float lingfix = 1f, f
 
 ### 无视关系传功
 
+**【搜索内容】**
+![](./Resources/search_teachall.png)
+
 **【原版代码】**
 ```csharp
+case g_emIndividualCommandType.Teach:
+{
+	Npc npc4 = t as Npc;
+	if (!npc4.IsValid || npc4.Rank != g_emNpcRank.Disciple || !npc4.IsPlayerThing)
+	{
+		this.SetHeadMsg(TFMgr.Get("不是内门弟子"), true);
+		return false;
+	}
+	if (npc4.PropertyMgr.Practice.MasterID != this.BindThing.ID && npc4.PropertyMgr.Practice.MasterRank < (this.BindThing as Npc).PropertyMgr.Practice.MasterRank)
+	{
+		this.SetHeadMsg(string.Format(TFMgr.Get("只能传授给低代弟子"), this.BindThing.GetName()), true);
+		return false;
+	}
+	if (npc4.PropertyMgr.Practice.LogicStage > (this.BindThing as Npc).PropertyMgr.Practice.LogicStage)
+	{
+		this.SetHeadMsg(string.Format(TFMgr.Get("不能传给比自己境界高的弟子"), this.BindThing.GetName()), true);
+		return false;
+	}
+	if (npc4.HasSpecialFlag(g_emNpcSpecailFlag.FLAG_MAGIC) || npc4.Lock.FreeCount <= 0)
+	{
+		this.SetHeadMsg(TFMgr.Get("该角色正忙"), true);
+		return false;
+	}
+	this.SetHeadMsg(null, true);
+	return true;
+}
 ```
 
 **【修改内容】**
@@ -838,6 +867,93 @@ protected override List<ToilBase> GetToilList()
 	};//把上面一行的20f改成0.01f，达到1s传功的效果
 }
 ```
+
+### 解除领悟功法传功限制
+
+一共有两处修改。
+
+**【搜索内容】**
+![](./Resources/search_unlock_teachlimit1.png)
+
+**【原版内容】**
+```csharp
+public string GetCheckCanLearnEsotericString(string name, Npc master = null)
+{
+	//以上省略N多代码...
+	EsotericaDef esotericaTemplate = EsotericaMgr.Instance.GetEsotericaTemplate(sysEsoterica.TID);
+	if (esotericaTemplate == null)
+	{
+		text += string.Format(TFMgr.Get("秘籍异常\n"), new object[0]);
+	}
+	if (master != null && esotericaTemplate.Hide == 2)
+	{
+		text += string.Format(TFMgr.Get("自行领悟，不可传授。\n"), new object[0]);
+		return text;
+	}
+	float num = 0.75f;
+	//以下省略N多代码...
+	return text;
+}
+```
+
+**【修改内容】**
+```csharp
+public string GetCheckCanLearnEsotericString(string name, Npc master = null)
+{
+	//以上省略N多代码...
+	EsotericaDef esotericaTemplate = EsotericaMgr.Instance.GetEsotericaTemplate(sysEsoterica.TID);
+	if (esotericaTemplate == null)
+	{
+		text += string.Format(TFMgr.Get("秘籍异常\n"), new object[0]);
+	}
+	//删除了自行领悟功法不可传功的限制
+	float num = 0.75f;
+	//以下省略N多代码...
+	return text;
+}
+```
+**【搜索内容】**
+![](./Resources/search_unlock_teachlimit2.png)
+
+**【原版内容】**
+
+```csharp
+public bool CheckCanLearnEsoteric(string name, Npc master = null)
+{
+	//以上省略N多代码...
+	EsotericaDef esotericaTemplate = EsotericaMgr.Instance.GetEsotericaTemplate(sysEsoterica.TID);
+	if (esotericaTemplate == null)
+	{
+		return false;
+	}
+	if (master != null && esotericaTemplate.Hide == 2)
+	{
+		return false;
+	}
+	float num = 0.75f;
+	//以下省略N多代码...
+	return true;
+}
+```
+
+**【修改内容】**
+
+```csharp
+public bool CheckCanLearnEsoteric(string name, Npc master = null)
+{
+	//以上省略N多代码...
+	EsotericaDef esotericaTemplate = EsotericaMgr.Instance.GetEsotericaTemplate(sysEsoterica.TID);
+	if (esotericaTemplate == null)
+	{
+		return false;
+	}
+	//删除了自行领悟功法不可传功的限制
+	float num = 0.75f;
+	//以下省略N多代码...
+	return true;
+}
+```
+
 
 ## 门派人数上限的修改
 
